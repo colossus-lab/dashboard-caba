@@ -1,0 +1,955 @@
+{
+  "meta": {
+    "id": "poblacion-economia",
+    "title": "Características Económicas de la Población",
+    "category": "Población",
+    "subcategory": "Economía",
+    "source": "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)",
+    "date": "2022"
+  },
+  "kpis": [
+    {
+      "id": "tasa-actividad",
+      "label": "Tasa de actividad",
+      "value": 67.97964273242701,
+      "formatted": "68,0%",
+      "comparison": "PEA / Población 14+"
+    },
+    {
+      "id": "tasa-empleo",
+      "label": "Tasa de empleo",
+      "value": 62.90111670470946,
+      "formatted": "62,9%",
+      "comparison": "Ocupados / Población 14+"
+    },
+    {
+      "id": "tasa-desoc",
+      "label": "Tasa de desocupación",
+      "value": 7.470657131440067,
+      "formatted": "7,5%",
+      "comparison": "Desocupados / PEA"
+    },
+    {
+      "id": "no-pea",
+      "label": "Población no económicamente activa",
+      "value": 854599,
+      "formatted": "854,6K"
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "condicion-de-actividad",
+      "config": {},
+      "id": "pie-actividad",
+      "type": "pie",
+      "title": "Condición de actividad económica — CABA (14+)",
+      "sectionTitle": "Condición de Actividad",
+      "data": [
+        {
+          "id": "Ocupada",
+          "label": "Ocupada",
+          "value": 1678783
+        },
+        {
+          "id": "Desocupada",
+          "label": "Desocupada",
+          "value": 135542
+        },
+        {
+          "id": "No PEA",
+          "label": "No PEA",
+          "value": 854599
+        }
+      ]
+    },
+    {
+      "sectionId": "tasa-de-actividad-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Tasa actividad %"
+      },
+      "id": "bar-tasa-act-comuna",
+      "type": "bar",
+      "title": "Tasa de actividad por comuna",
+      "sectionTitle": "Tasa de Actividad por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Tasa actividad %": 70.5
+        },
+        {
+          "comuna": "Comuna 2",
+          "Tasa actividad %": 66.2
+        },
+        {
+          "comuna": "Comuna 3",
+          "Tasa actividad %": 69.1
+        },
+        {
+          "comuna": "Comuna 4",
+          "Tasa actividad %": 68
+        },
+        {
+          "comuna": "Comuna 5",
+          "Tasa actividad %": 69.5
+        },
+        {
+          "comuna": "Comuna 6",
+          "Tasa actividad %": 68.2
+        },
+        {
+          "comuna": "Comuna 7",
+          "Tasa actividad %": 66.5
+        },
+        {
+          "comuna": "Comuna 8",
+          "Tasa actividad %": 65.7
+        },
+        {
+          "comuna": "Comuna 9",
+          "Tasa actividad %": 64.7
+        },
+        {
+          "comuna": "Comuna 10",
+          "Tasa actividad %": 65.6
+        },
+        {
+          "comuna": "Comuna 11",
+          "Tasa actividad %": 66.2
+        },
+        {
+          "comuna": "Comuna 12",
+          "Tasa actividad %": 69.2
+        },
+        {
+          "comuna": "Comuna 13",
+          "Tasa actividad %": 68.1
+        },
+        {
+          "comuna": "Comuna 14",
+          "Tasa actividad %": 69.3
+        },
+        {
+          "comuna": "Comuna 15",
+          "Tasa actividad %": 70.8
+        }
+      ]
+    },
+    {
+      "sectionId": "tasa-de-desocupacion-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Desocupación %"
+      },
+      "id": "bar-tasa-desoc-comuna",
+      "type": "bar",
+      "title": "Tasa de desocupación por comuna",
+      "sectionTitle": "Tasa de Desocupación por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Desocupación %": 7.9
+        },
+        {
+          "comuna": "Comuna 2",
+          "Desocupación %": 7
+        },
+        {
+          "comuna": "Comuna 3",
+          "Desocupación %": 8.3
+        },
+        {
+          "comuna": "Comuna 4",
+          "Desocupación %": 9
+        },
+        {
+          "comuna": "Comuna 5",
+          "Desocupación %": 7.2
+        },
+        {
+          "comuna": "Comuna 6",
+          "Desocupación %": 6.8
+        },
+        {
+          "comuna": "Comuna 7",
+          "Desocupación %": 7.9
+        },
+        {
+          "comuna": "Comuna 8",
+          "Desocupación %": 10.3
+        },
+        {
+          "comuna": "Comuna 9",
+          "Desocupación %": 8.6
+        },
+        {
+          "comuna": "Comuna 10",
+          "Desocupación %": 7.6
+        },
+        {
+          "comuna": "Comuna 11",
+          "Desocupación %": 7.3
+        },
+        {
+          "comuna": "Comuna 12",
+          "Desocupación %": 6.8
+        },
+        {
+          "comuna": "Comuna 13",
+          "Desocupación %": 6
+        },
+        {
+          "comuna": "Comuna 14",
+          "Desocupación %": 6
+        },
+        {
+          "comuna": "Comuna 15",
+          "Desocupación %": 6.8
+        }
+      ]
+    },
+    {
+      "sectionId": "ramas-de-actividad-economica",
+      "config": {
+        "xAxis": "rama",
+        "yAxis": "Ocupados",
+        "layout": "horizontal"
+      },
+      "id": "bar-ramas",
+      "type": "bar",
+      "title": "Población ocupada por rama de actividad económica",
+      "sectionTitle": "Ramas de Actividad Económica",
+      "data": [
+        {
+          "rama": "Comercio al por mayor y al por menor…",
+          "Ocupados": 268637
+        },
+        {
+          "rama": "Sin respuesta",
+          "Ocupados": 200936
+        },
+        {
+          "rama": "Información insuficiente para codifi…",
+          "Ocupados": 168132
+        },
+        {
+          "rama": "Comercio al por mayor y al por menor…",
+          "Ocupados": 148663
+        },
+        {
+          "rama": "Salud humana y servicios sociales",
+          "Ocupados": 120237
+        },
+        {
+          "rama": "Comercio al por mayor y al por menor…",
+          "Ocupados": 119974
+        },
+        {
+          "rama": "Servicios profesionales, científicos…",
+          "Ocupados": 114816
+        },
+        {
+          "rama": "Enseñanza",
+          "Ocupados": 114112
+        },
+        {
+          "rama": "Industria manufacturera",
+          "Ocupados": 108946
+        },
+        {
+          "rama": "Sin respuesta",
+          "Ocupados": 101782
+        }
+      ]
+    },
+    {
+      "sectionId": "categoria-ocupacional-por-edad",
+      "config": {
+        "xAxis": "edad",
+        "yAxis": "%"
+      },
+      "id": "line-cat-ocupacional-edad",
+      "type": "line",
+      "title": "Distribución de la categoría ocupacional según edad",
+      "sectionTitle": "Categoría Ocupacional por Edad",
+      "data": [
+        {
+          "edad": "14",
+          "Servicio doméstico %": 4.7,
+          "Empleado/obrero %": 33.6,
+          "Cuenta propia %": 26.7,
+          "Patrón/Empleador %": 3.7
+        },
+        {
+          "edad": "15-19",
+          "Servicio doméstico %": 5.6,
+          "Empleado/obrero %": 48.5,
+          "Cuenta propia %": 24.8,
+          "Patrón/Empleador %": 2.8
+        },
+        {
+          "edad": "20-24",
+          "Servicio doméstico %": 3.7,
+          "Empleado/obrero %": 64.3,
+          "Cuenta propia %": 20.9,
+          "Patrón/Empleador %": 2.9
+        },
+        {
+          "edad": "25-29",
+          "Servicio doméstico %": 2.8,
+          "Empleado/obrero %": 67,
+          "Cuenta propia %": 21.1,
+          "Patrón/Empleador %": 3.6
+        },
+        {
+          "edad": "30-34",
+          "Servicio doméstico %": 2.7,
+          "Empleado/obrero %": 65.9,
+          "Cuenta propia %": 22.9,
+          "Patrón/Empleador %": 4
+        },
+        {
+          "edad": "35-39",
+          "Servicio doméstico %": 2.9,
+          "Empleado/obrero %": 63.5,
+          "Cuenta propia %": 24.9,
+          "Patrón/Empleador %": 4.4
+        },
+        {
+          "edad": "40-44",
+          "Servicio doméstico %": 3.5,
+          "Empleado/obrero %": 60.7,
+          "Cuenta propia %": 26.8,
+          "Patrón/Empleador %": 4.7
+        },
+        {
+          "edad": "45-49",
+          "Servicio doméstico %": 4.4,
+          "Empleado/obrero %": 57.4,
+          "Cuenta propia %": 28.8,
+          "Patrón/Empleador %": 5
+        },
+        {
+          "edad": "50-54",
+          "Servicio doméstico %": 5.5,
+          "Empleado/obrero %": 54.4,
+          "Cuenta propia %": 30.1,
+          "Patrón/Empleador %": 5.3
+        },
+        {
+          "edad": "55-59",
+          "Servicio doméstico %": 6.2,
+          "Empleado/obrero %": 51.2,
+          "Cuenta propia %": 32.4,
+          "Patrón/Empleador %": 5.4
+        },
+        {
+          "edad": "60-64",
+          "Servicio doméstico %": 5.7,
+          "Empleado/obrero %": 45.3,
+          "Cuenta propia %": 37.5,
+          "Patrón/Empleador %": 5.9
+        },
+        {
+          "edad": "65-69",
+          "Servicio doméstico %": 5.2,
+          "Empleado/obrero %": 32.8,
+          "Cuenta propia %": 48,
+          "Patrón/Empleador %": 6.9
+        },
+        {
+          "edad": "70-74",
+          "Servicio doméstico %": 4.6,
+          "Empleado/obrero %": 19.7,
+          "Cuenta propia %": 57.6,
+          "Patrón/Empleador %": 8.5
+        },
+        {
+          "edad": "75-79",
+          "Servicio doméstico %": 3.8,
+          "Empleado/obrero %": 16.2,
+          "Cuenta propia %": 59.2,
+          "Patrón/Empleador %": 9.2
+        },
+        {
+          "edad": "14",
+          "Servicio doméstico %": 5,
+          "Empleado/obrero %": 34.3,
+          "Cuenta propia %": 25,
+          "Patrón/Empleador %": 4.5
+        },
+        {
+          "edad": "15-19",
+          "Servicio doméstico %": 9.7,
+          "Empleado/obrero %": 47.1,
+          "Cuenta propia %": 23.6,
+          "Patrón/Empleador %": 2.8
+        },
+        {
+          "edad": "20-24",
+          "Servicio doméstico %": 6.8,
+          "Empleado/obrero %": 63.1,
+          "Cuenta propia %": 19.7,
+          "Patrón/Empleador %": 2.8
+        },
+        {
+          "edad": "25-29",
+          "Servicio doméstico %": 5,
+          "Empleado/obrero %": 66.7,
+          "Cuenta propia %": 19.8,
+          "Patrón/Empleador %": 3.3
+        },
+        {
+          "edad": "30-34",
+          "Servicio doméstico %": 5,
+          "Empleado/obrero %": 65.7,
+          "Cuenta propia %": 21.5,
+          "Patrón/Empleador %": 3.5
+        },
+        {
+          "edad": "35-39",
+          "Servicio doméstico %": 5.5,
+          "Empleado/obrero %": 63.5,
+          "Cuenta propia %": 23.2,
+          "Patrón/Empleador %": 3.6
+        },
+        {
+          "edad": "40-44",
+          "Servicio doméstico %": 6.6,
+          "Empleado/obrero %": 60.9,
+          "Cuenta propia %": 24.6,
+          "Patrón/Empleador %": 3.6
+        },
+        {
+          "edad": "45-49",
+          "Servicio doméstico %": 8.3,
+          "Empleado/obrero %": 57.8,
+          "Cuenta propia %": 25.8,
+          "Patrón/Empleador %": 3.6
+        },
+        {
+          "edad": "50-54",
+          "Servicio doméstico %": 10.3,
+          "Empleado/obrero %": 54.7,
+          "Cuenta propia %": 26.4,
+          "Patrón/Empleador %": 3.7
+        },
+        {
+          "edad": "55-59",
+          "Servicio doméstico %": 11.8,
+          "Empleado/obrero %": 51.5,
+          "Cuenta propia %": 28,
+          "Patrón/Empleador %": 3.6
+        },
+        {
+          "edad": "60-64",
+          "Servicio doméstico %": 12,
+          "Empleado/obrero %": 43.1,
+          "Cuenta propia %": 34.1,
+          "Patrón/Empleador %": 4
+        },
+        {
+          "edad": "65-69",
+          "Servicio doméstico %": 10.9,
+          "Empleado/obrero %": 31,
+          "Cuenta propia %": 44.8,
+          "Patrón/Empleador %": 4.6
+        },
+        {
+          "edad": "70-74",
+          "Servicio doméstico %": 9.7,
+          "Empleado/obrero %": 19.9,
+          "Cuenta propia %": 53,
+          "Patrón/Empleador %": 5.3
+        },
+        {
+          "edad": "75-79",
+          "Servicio doméstico %": 7.9,
+          "Empleado/obrero %": 16.9,
+          "Cuenta propia %": 54.3,
+          "Patrón/Empleador %": 5.6
+        },
+        {
+          "edad": "14",
+          "Servicio doméstico %": 4.4,
+          "Empleado/obrero %": 32.8,
+          "Cuenta propia %": 28.4,
+          "Patrón/Empleador %": 2.9
+        },
+        {
+          "edad": "15-19",
+          "Servicio doméstico %": 1.6,
+          "Empleado/obrero %": 49.9,
+          "Cuenta propia %": 26,
+          "Patrón/Empleador %": 2.8
+        },
+        {
+          "edad": "20-24",
+          "Servicio doméstico %": 0.7,
+          "Empleado/obrero %": 65.5,
+          "Cuenta propia %": 22,
+          "Patrón/Empleador %": 2.9
+        },
+        {
+          "edad": "25-29",
+          "Servicio doméstico %": 0.4,
+          "Empleado/obrero %": 67.4,
+          "Cuenta propia %": 22.5,
+          "Patrón/Empleador %": 3.9
+        },
+        {
+          "edad": "30-34",
+          "Servicio doméstico %": 0.3,
+          "Empleado/obrero %": 66.1,
+          "Cuenta propia %": 24.4,
+          "Patrón/Empleador %": 4.5
+        },
+        {
+          "edad": "35-39",
+          "Servicio doméstico %": 0.3,
+          "Empleado/obrero %": 63.5,
+          "Cuenta propia %": 26.7,
+          "Patrón/Empleador %": 5.2
+        },
+        {
+          "edad": "40-44",
+          "Servicio doméstico %": 0.3,
+          "Empleado/obrero %": 60.5,
+          "Cuenta propia %": 29,
+          "Patrón/Empleador %": 5.9
+        },
+        {
+          "edad": "45-49",
+          "Servicio doméstico %": 0.3,
+          "Empleado/obrero %": 57,
+          "Cuenta propia %": 32,
+          "Patrón/Empleador %": 6.4
+        },
+        {
+          "edad": "50-54",
+          "Servicio doméstico %": 0.4,
+          "Empleado/obrero %": 54,
+          "Cuenta propia %": 34,
+          "Patrón/Empleador %": 6.9
+        },
+        {
+          "edad": "55-59",
+          "Servicio doméstico %": 0.4,
+          "Empleado/obrero %": 50.9,
+          "Cuenta propia %": 36.9,
+          "Patrón/Empleador %": 7.2
+        },
+        {
+          "edad": "60-64",
+          "Servicio doméstico %": 0.4,
+          "Empleado/obrero %": 47.1,
+          "Cuenta propia %": 40.3,
+          "Patrón/Empleador %": 7.6
+        },
+        {
+          "edad": "65-69",
+          "Servicio doméstico %": 0.6,
+          "Empleado/obrero %": 34.2,
+          "Cuenta propia %": 50.6,
+          "Patrón/Empleador %": 8.6
+        },
+        {
+          "edad": "70-74",
+          "Servicio doméstico %": 0.7,
+          "Empleado/obrero %": 19.5,
+          "Cuenta propia %": 61,
+          "Patrón/Empleador %": 11
+        },
+        {
+          "edad": "75-79",
+          "Servicio doméstico %": 0.8,
+          "Empleado/obrero %": 15.6,
+          "Cuenta propia %": 62.8,
+          "Patrón/Empleador %": 11.8
+        }
+      ]
+    },
+    {
+      "sectionId": "actividad-y-nivel-educativo",
+      "config": {
+        "xAxis": "nivel",
+        "yAxis": "%",
+        "grouped": true
+      },
+      "id": "bar-actividad-nivel-edu",
+      "type": "bar",
+      "title": "Tasas de actividad y empleo según máximo nivel educativo",
+      "sectionTitle": "Actividad y Nivel Educativo",
+      "data": [
+        {
+          "nivel": "Sin instrucción",
+          "Tasa actividad %": 43.7,
+          "Tasa empleo %": 28,
+          "Tasa desocupación %": 35.9
+        },
+        {
+          "nivel": "Primario incompleto",
+          "Tasa actividad %": 47.5,
+          "Tasa empleo %": 44.3,
+          "Tasa desocupación %": 6.7
+        },
+        {
+          "nivel": "Primario completo",
+          "Tasa actividad %": 44.6,
+          "Tasa empleo %": 41.5,
+          "Tasa desocupación %": 6.9
+        },
+        {
+          "nivel": "EGB incompleto",
+          "Tasa actividad %": 65.7,
+          "Tasa empleo %": 56.1,
+          "Tasa desocupación %": 14.5
+        },
+        {
+          "nivel": "EGB completo",
+          "Tasa actividad %": 58.7,
+          "Tasa empleo %": 52.5,
+          "Tasa desocupación %": 10.4
+        },
+        {
+          "nivel": "Secundario incompleto",
+          "Tasa actividad %": 68.4,
+          "Tasa empleo %": 62.7,
+          "Tasa desocupación %": 8.4
+        },
+        {
+          "nivel": "Secundario completo",
+          "Tasa actividad %": 66.2,
+          "Tasa empleo %": 60.8,
+          "Tasa desocupación %": 8.1
+        },
+        {
+          "nivel": "Polimodal incompleto",
+          "Tasa actividad %": 71.6,
+          "Tasa empleo %": 61.7,
+          "Tasa desocupación %": 13.8
+        },
+        {
+          "nivel": "Polimodal completo",
+          "Tasa actividad %": 73.9,
+          "Tasa empleo %": 65.9,
+          "Tasa desocupación %": 10.8
+        },
+        {
+          "nivel": "Terciario no universitario i…",
+          "Tasa actividad %": 78.8,
+          "Tasa empleo %": 73.9,
+          "Tasa desocupación %": 6.2
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "sectionId": "tasa-de-actividad-por-comuna",
+      "id": "rank-actividad",
+      "title": "Comunas con mayor tasa de actividad",
+      "items": [
+        {
+          "name": "Comuna 15",
+          "value": 70.8,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 70.5,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 69.5,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 69.3,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 69.2,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 69.1,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 68.2,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 68.1,
+          "municipioId": "13"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 68,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 66.5,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 66.2,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 66.2,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 8",
+          "value": 65.7,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 65.6,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 64.7,
+          "municipioId": "09"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "sectionId": "tasa-de-desocupacion-por-comuna",
+      "id": "rank-desocupacion",
+      "title": "Comunas con mayor tasa de desocupación",
+      "items": [
+        {
+          "name": "Comuna 8",
+          "value": 10.3,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 9,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 8.6,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 8.3,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 7.9,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 7.9,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 7.6,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 7.3,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 7.2,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 7,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 6.8,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 6.8,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 6.8,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 6,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 6,
+          "municipioId": "13"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "sectionId": "ramas-de-actividad-economica",
+      "id": "rank-ramas",
+      "title": "Ramas con mayor ocupación",
+      "items": [
+        {
+          "name": "Comercio al por mayor y al por menor…",
+          "value": 268637
+        },
+        {
+          "name": "Sin respuesta",
+          "value": 200936
+        },
+        {
+          "name": "Información insuficiente para codifi…",
+          "value": 168132
+        },
+        {
+          "name": "Comercio al por mayor y al por menor…",
+          "value": 148663
+        },
+        {
+          "name": "Salud humana y servicios sociales",
+          "value": 120237
+        },
+        {
+          "name": "Comercio al por mayor y al por menor…",
+          "value": 119974
+        },
+        {
+          "name": "Servicios profesionales, científicos…",
+          "value": 114816
+        },
+        {
+          "name": "Enseñanza",
+          "value": 114112
+        },
+        {
+          "name": "Industria manufacturera",
+          "value": 108946
+        },
+        {
+          "name": "Sin respuesta",
+          "value": 101782
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "01",
+      "municipioNombre": "Comuna 1",
+      "value": 7.9,
+      "label": "7,9% desocupación"
+    },
+    {
+      "municipioId": "02",
+      "municipioNombre": "Comuna 2",
+      "value": 7,
+      "label": "7,0% desocupación"
+    },
+    {
+      "municipioId": "03",
+      "municipioNombre": "Comuna 3",
+      "value": 8.3,
+      "label": "8,3% desocupación"
+    },
+    {
+      "municipioId": "04",
+      "municipioNombre": "Comuna 4",
+      "value": 9,
+      "label": "9,0% desocupación"
+    },
+    {
+      "municipioId": "05",
+      "municipioNombre": "Comuna 5",
+      "value": 7.2,
+      "label": "7,2% desocupación"
+    },
+    {
+      "municipioId": "06",
+      "municipioNombre": "Comuna 6",
+      "value": 6.8,
+      "label": "6,8% desocupación"
+    },
+    {
+      "municipioId": "07",
+      "municipioNombre": "Comuna 7",
+      "value": 7.9,
+      "label": "7,9% desocupación"
+    },
+    {
+      "municipioId": "08",
+      "municipioNombre": "Comuna 8",
+      "value": 10.3,
+      "label": "10,3% desocupación"
+    },
+    {
+      "municipioId": "09",
+      "municipioNombre": "Comuna 9",
+      "value": 8.6,
+      "label": "8,6% desocupación"
+    },
+    {
+      "municipioId": "10",
+      "municipioNombre": "Comuna 10",
+      "value": 7.6,
+      "label": "7,6% desocupación"
+    },
+    {
+      "municipioId": "11",
+      "municipioNombre": "Comuna 11",
+      "value": 7.3,
+      "label": "7,3% desocupación"
+    },
+    {
+      "municipioId": "12",
+      "municipioNombre": "Comuna 12",
+      "value": 6.8,
+      "label": "6,8% desocupación"
+    },
+    {
+      "municipioId": "13",
+      "municipioNombre": "Comuna 13",
+      "value": 6,
+      "label": "6,0% desocupación"
+    },
+    {
+      "municipioId": "14",
+      "municipioNombre": "Comuna 14",
+      "value": 6,
+      "label": "6,0% desocupación"
+    },
+    {
+      "municipioId": "15",
+      "municipioNombre": "Comuna 15",
+      "value": 6.8,
+      "label": "6,8% desocupación"
+    }
+  ]
+}

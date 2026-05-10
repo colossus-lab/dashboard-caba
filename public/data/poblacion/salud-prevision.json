@@ -1,0 +1,642 @@
+{
+  "meta": {
+    "id": "poblacion-salud-prevision",
+    "title": "Salud y Previsión Social",
+    "category": "Población",
+    "subcategory": "Salud",
+    "source": "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)",
+    "date": "2022"
+  },
+  "kpis": [
+    {
+      "id": "obra-prepaga",
+      "label": "Con obra social o prepaga",
+      "value": 81.5335327225021,
+      "formatted": "81,5%"
+    },
+    {
+      "id": "programas",
+      "label": "Programas o planes estatales",
+      "value": 2.1548696895511936,
+      "formatted": "2,2%"
+    },
+    {
+      "id": "sin-cobertura",
+      "label": "Sin cobertura de salud",
+      "value": 16.31159758794671,
+      "formatted": "16,3%",
+      "status": "critical"
+    },
+    {
+      "id": "con-jub",
+      "label": "Percibe jubilación o pensión",
+      "value": 20.631997761879195,
+      "formatted": "20,6%"
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "tipo-de-cobertura",
+      "config": {},
+      "id": "pie-cobertura",
+      "type": "pie",
+      "title": "Tipo de cobertura de salud — CABA",
+      "sectionTitle": "Tipo de Cobertura",
+      "data": [
+        {
+          "id": "Obra social/Prepaga",
+          "label": "Obra social/Prepaga",
+          "value": 2523833
+        },
+        {
+          "id": "Programas estatales",
+          "label": "Programas estatales",
+          "value": 66703
+        },
+        {
+          "id": "Sin cobertura",
+          "label": "Sin cobertura",
+          "value": 504918
+        }
+      ]
+    },
+    {
+      "sectionId": "brechas-de-cobertura-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Sin cobertura %"
+      },
+      "id": "bar-sin-cob-comuna",
+      "type": "bar",
+      "title": "% sin cobertura de salud por comuna",
+      "sectionTitle": "Brechas de Cobertura por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Sin cobertura %": 27.9
+        },
+        {
+          "comuna": "Comuna 2",
+          "Sin cobertura %": 7.7
+        },
+        {
+          "comuna": "Comuna 3",
+          "Sin cobertura %": 20.1
+        },
+        {
+          "comuna": "Comuna 4",
+          "Sin cobertura %": 28.5
+        },
+        {
+          "comuna": "Comuna 5",
+          "Sin cobertura %": 12.4
+        },
+        {
+          "comuna": "Comuna 6",
+          "Sin cobertura %": 8
+        },
+        {
+          "comuna": "Comuna 7",
+          "Sin cobertura %": 17.5
+        },
+        {
+          "comuna": "Comuna 8",
+          "Sin cobertura %": 41.6
+        },
+        {
+          "comuna": "Comuna 9",
+          "Sin cobertura %": 22.3
+        },
+        {
+          "comuna": "Comuna 10",
+          "Sin cobertura %": 14.7
+        },
+        {
+          "comuna": "Comuna 11",
+          "Sin cobertura %": 10.5
+        },
+        {
+          "comuna": "Comuna 12",
+          "Sin cobertura %": 8.6
+        },
+        {
+          "comuna": "Comuna 13",
+          "Sin cobertura %": 6.1
+        },
+        {
+          "comuna": "Comuna 14",
+          "Sin cobertura %": 7.4
+        },
+        {
+          "comuna": "Comuna 15",
+          "Sin cobertura %": 13.6
+        }
+      ]
+    },
+    {
+      "sectionId": "cobertura-por-grupo-de-edad",
+      "config": {
+        "xAxis": "edad",
+        "yAxis": "Porcentaje"
+      },
+      "id": "line-cobertura-edad",
+      "type": "line",
+      "title": "Cobertura de salud según grupo de edad — CABA",
+      "sectionTitle": "Cobertura por Grupo de Edad",
+      "data": [
+        {
+          "edad": "0-4",
+          "Sin cobertura %": 19.8,
+          "Con obra social/prepaga %": 77.5
+        },
+        {
+          "edad": "5-9",
+          "Sin cobertura %": 20,
+          "Con obra social/prepaga %": 77.1
+        },
+        {
+          "edad": "10-14",
+          "Sin cobertura %": 19.9,
+          "Con obra social/prepaga %": 77.2
+        },
+        {
+          "edad": "15-19",
+          "Sin cobertura %": 20.7,
+          "Con obra social/prepaga %": 76.7
+        },
+        {
+          "edad": "20-24",
+          "Sin cobertura %": 27.7,
+          "Con obra social/prepaga %": 70
+        },
+        {
+          "edad": "25-29",
+          "Sin cobertura %": 25.9,
+          "Con obra social/prepaga %": 71.8
+        },
+        {
+          "edad": "30-34",
+          "Sin cobertura %": 20.3,
+          "Con obra social/prepaga %": 77.5
+        },
+        {
+          "edad": "35-39",
+          "Sin cobertura %": 17.4,
+          "Con obra social/prepaga %": 80.5
+        },
+        {
+          "edad": "40-44",
+          "Sin cobertura %": 15.9,
+          "Con obra social/prepaga %": 81.9
+        },
+        {
+          "edad": "45-49",
+          "Sin cobertura %": 15.4,
+          "Con obra social/prepaga %": 82.3
+        },
+        {
+          "edad": "50-54",
+          "Sin cobertura %": 15.8,
+          "Con obra social/prepaga %": 81.8
+        },
+        {
+          "edad": "55-59",
+          "Sin cobertura %": 15.2,
+          "Con obra social/prepaga %": 82.3
+        },
+        {
+          "edad": "60-64",
+          "Sin cobertura %": 11.8,
+          "Con obra social/prepaga %": 86
+        },
+        {
+          "edad": "65-69",
+          "Sin cobertura %": 5.8,
+          "Con obra social/prepaga %": 92.8
+        },
+        {
+          "edad": "70-74",
+          "Sin cobertura %": 2.8,
+          "Con obra social/prepaga %": 96.1
+        },
+        {
+          "edad": "75-79",
+          "Sin cobertura %": 2,
+          "Con obra social/prepaga %": 97.1
+        },
+        {
+          "edad": "80-84",
+          "Sin cobertura %": 1.6,
+          "Con obra social/prepaga %": 97.5
+        },
+        {
+          "edad": "85-89",
+          "Sin cobertura %": 1.6,
+          "Con obra social/prepaga %": 97.5
+        },
+        {
+          "edad": "90-94",
+          "Sin cobertura %": 1.8,
+          "Con obra social/prepaga %": 97.3
+        },
+        {
+          "edad": "95-99",
+          "Sin cobertura %": 3.3,
+          "Con obra social/prepaga %": 95.6
+        },
+        {
+          "edad": "100 y más",
+          "Sin cobertura %": 3.3,
+          "Con obra social/prepaga %": 95.4
+        },
+        {
+          "edad": "0-4",
+          "Sin cobertura %": 19.7,
+          "Con obra social/prepaga %": 77.6
+        },
+        {
+          "edad": "5-9",
+          "Sin cobertura %": 20.4,
+          "Con obra social/prepaga %": 76.7
+        },
+        {
+          "edad": "10-14",
+          "Sin cobertura %": 20.1,
+          "Con obra social/prepaga %": 77.1
+        },
+        {
+          "edad": "15-19",
+          "Sin cobertura %": 20.9,
+          "Con obra social/prepaga %": 76.5
+        },
+        {
+          "edad": "20-24",
+          "Sin cobertura %": 27.2,
+          "Con obra social/prepaga %": 70.3
+        },
+        {
+          "edad": "25-29",
+          "Sin cobertura %": 24.8,
+          "Con obra social/prepaga %": 72.7
+        },
+        {
+          "edad": "30-34",
+          "Sin cobertura %": 18.9,
+          "Con obra social/prepaga %": 78.8
+        },
+        {
+          "edad": "35-39",
+          "Sin cobertura %": 15.9,
+          "Con obra social/prepaga %": 81.9
+        },
+        {
+          "edad": "40-44",
+          "Sin cobertura %": 14.4,
+          "Con obra social/prepaga %": 83.3
+        },
+        {
+          "edad": "45-49",
+          "Sin cobertura %": 14.5,
+          "Con obra social/prepaga %": 83.2
+        },
+        {
+          "edad": "50-54",
+          "Sin cobertura %": 15.1,
+          "Con obra social/prepaga %": 82.5
+        },
+        {
+          "edad": "55-59",
+          "Sin cobertura %": 14.6,
+          "Con obra social/prepaga %": 82.8
+        },
+        {
+          "edad": "60-64",
+          "Sin cobertura %": 9.7,
+          "Con obra social/prepaga %": 88.3
+        },
+        {
+          "edad": "65-69",
+          "Sin cobertura %": 4.6,
+          "Con obra social/prepaga %": 94.2
+        },
+        {
+          "edad": "70-74",
+          "Sin cobertura %": 2.7,
+          "Con obra social/prepaga %": 96.2
+        },
+        {
+          "edad": "75-79",
+          "Sin cobertura %": 1.9,
+          "Con obra social/prepaga %": 97.2
+        },
+        {
+          "edad": "80-84",
+          "Sin cobertura %": 1.6,
+          "Con obra social/prepaga %": 97.4
+        },
+        {
+          "edad": "85-89",
+          "Sin cobertura %": 1.6,
+          "Con obra social/prepaga %": 97.6
+        },
+        {
+          "edad": "90-94",
+          "Sin cobertura %": 1.6,
+          "Con obra social/prepaga %": 97.5
+        },
+        {
+          "edad": "95-99",
+          "Sin cobertura %": 2.7,
+          "Con obra social/prepaga %": 96.3
+        },
+        {
+          "edad": "100 y más",
+          "Sin cobertura %": 2.1,
+          "Con obra social/prepaga %": 96.4
+        },
+        {
+          "edad": "0-4",
+          "Sin cobertura %": 19.9,
+          "Con obra social/prepaga %": 77.4
+        },
+        {
+          "edad": "5-9",
+          "Sin cobertura %": 19.6,
+          "Con obra social/prepaga %": 77.5
+        },
+        {
+          "edad": "10-14",
+          "Sin cobertura %": 19.8,
+          "Con obra social/prepaga %": 77.3
+        },
+        {
+          "edad": "15-19",
+          "Sin cobertura %": 20.5,
+          "Con obra social/prepaga %": 77
+        },
+        {
+          "edad": "20-24",
+          "Sin cobertura %": 28.1,
+          "Con obra social/prepaga %": 69.7
+        },
+        {
+          "edad": "25-29",
+          "Sin cobertura %": 27.1,
+          "Con obra social/prepaga %": 70.7
+        },
+        {
+          "edad": "30-34",
+          "Sin cobertura %": 21.8,
+          "Con obra social/prepaga %": 76.2
+        },
+        {
+          "edad": "35-39",
+          "Sin cobertura %": 19,
+          "Con obra social/prepaga %": 79
+        },
+        {
+          "edad": "40-44",
+          "Sin cobertura %": 17.5,
+          "Con obra social/prepaga %": 80.4
+        },
+        {
+          "edad": "45-49",
+          "Sin cobertura %": 16.6,
+          "Con obra social/prepaga %": 81.3
+        },
+        {
+          "edad": "50-54",
+          "Sin cobertura %": 16.6,
+          "Con obra social/prepaga %": 81.1
+        },
+        {
+          "edad": "55-59",
+          "Sin cobertura %": 16,
+          "Con obra social/prepaga %": 81.7
+        },
+        {
+          "edad": "60-64",
+          "Sin cobertura %": 14.5,
+          "Con obra social/prepaga %": 83
+        },
+        {
+          "edad": "65-69",
+          "Sin cobertura %": 7.5,
+          "Con obra social/prepaga %": 90.9
+        },
+        {
+          "edad": "70-74",
+          "Sin cobertura %": 2.9,
+          "Con obra social/prepaga %": 96.1
+        },
+        {
+          "edad": "75-79",
+          "Sin cobertura %": 2.2,
+          "Con obra social/prepaga %": 96.9
+        },
+        {
+          "edad": "80-84",
+          "Sin cobertura %": 1.5,
+          "Con obra social/prepaga %": 97.6
+        },
+        {
+          "edad": "85-89",
+          "Sin cobertura %": 1.7,
+          "Con obra social/prepaga %": 97.5
+        },
+        {
+          "edad": "90-94",
+          "Sin cobertura %": 2.2,
+          "Con obra social/prepaga %": 96.9
+        },
+        {
+          "edad": "95-99",
+          "Sin cobertura %": 5.3,
+          "Con obra social/prepaga %": 93.3
+        },
+        {
+          "edad": "100 y más",
+          "Sin cobertura %": 8.5,
+          "Con obra social/prepaga %": 90.7
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "sectionId": "brechas-de-cobertura-por-comuna",
+      "id": "rank-sin-cob",
+      "title": "Comunas con mayor % sin cobertura",
+      "items": [
+        {
+          "name": "Comuna 8",
+          "value": 41.6,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 28.5,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 27.9,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 22.3,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 20.1,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 17.5,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 14.7,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 13.6,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 12.4,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 10.5,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 8.6,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 8,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 7.7,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 7.4,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 6.1,
+          "municipioId": "13"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "01",
+      "municipioNombre": "Comuna 1",
+      "value": 27.9,
+      "label": "27,9% sin cobertura"
+    },
+    {
+      "municipioId": "02",
+      "municipioNombre": "Comuna 2",
+      "value": 7.7,
+      "label": "7,7% sin cobertura"
+    },
+    {
+      "municipioId": "03",
+      "municipioNombre": "Comuna 3",
+      "value": 20.1,
+      "label": "20,1% sin cobertura"
+    },
+    {
+      "municipioId": "04",
+      "municipioNombre": "Comuna 4",
+      "value": 28.5,
+      "label": "28,5% sin cobertura"
+    },
+    {
+      "municipioId": "05",
+      "municipioNombre": "Comuna 5",
+      "value": 12.4,
+      "label": "12,4% sin cobertura"
+    },
+    {
+      "municipioId": "06",
+      "municipioNombre": "Comuna 6",
+      "value": 8,
+      "label": "8,0% sin cobertura"
+    },
+    {
+      "municipioId": "07",
+      "municipioNombre": "Comuna 7",
+      "value": 17.5,
+      "label": "17,5% sin cobertura"
+    },
+    {
+      "municipioId": "08",
+      "municipioNombre": "Comuna 8",
+      "value": 41.6,
+      "label": "41,6% sin cobertura"
+    },
+    {
+      "municipioId": "09",
+      "municipioNombre": "Comuna 9",
+      "value": 22.3,
+      "label": "22,3% sin cobertura"
+    },
+    {
+      "municipioId": "10",
+      "municipioNombre": "Comuna 10",
+      "value": 14.7,
+      "label": "14,7% sin cobertura"
+    },
+    {
+      "municipioId": "11",
+      "municipioNombre": "Comuna 11",
+      "value": 10.5,
+      "label": "10,5% sin cobertura"
+    },
+    {
+      "municipioId": "12",
+      "municipioNombre": "Comuna 12",
+      "value": 8.6,
+      "label": "8,6% sin cobertura"
+    },
+    {
+      "municipioId": "13",
+      "municipioNombre": "Comuna 13",
+      "value": 6.1,
+      "label": "6,1% sin cobertura"
+    },
+    {
+      "municipioId": "14",
+      "municipioNombre": "Comuna 14",
+      "value": 7.4,
+      "label": "7,4% sin cobertura"
+    },
+    {
+      "municipioId": "15",
+      "municipioNombre": "Comuna 15",
+      "value": 13.6,
+      "label": "13,6% sin cobertura"
+    }
+  ]
+}

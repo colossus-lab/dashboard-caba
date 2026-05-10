@@ -1,0 +1,607 @@
+{
+  "meta": {
+    "id": "poblacion-habitacional-personas",
+    "title": "Condiciones Habitacionales de la Población",
+    "category": "Población",
+    "subcategory": "Hábitat Personas",
+    "source": "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)",
+    "date": "2022"
+  },
+  "kpis": [
+    {
+      "id": "pob-cubierta",
+      "label": "Población en viviendas particulares",
+      "value": 3095454,
+      "formatted": "3,1M",
+      "unit": "hab."
+    },
+    {
+      "id": "gas-red",
+      "label": "Cocina con gas de red",
+      "value": 78.25740586033584,
+      "formatted": "78,3%"
+    },
+    {
+      "id": "gas-garrafa",
+      "label": "Cocina con gas en garrafa",
+      "value": 8.169237856547053,
+      "formatted": "8,2%"
+    },
+    {
+      "id": "agua-canio",
+      "label": "Agua por cañería dentro de la vivienda",
+      "value": 98.95281919873466,
+      "formatted": "99,0%"
+    },
+    {
+      "id": "internet",
+      "label": "Vive en hogar con internet",
+      "value": 91.74486198147348,
+      "formatted": "91,7%"
+    },
+    {
+      "id": "propia-pers",
+      "label": "Vive en vivienda propia",
+      "value": 54.488582288736964,
+      "formatted": "54,5%"
+    },
+    {
+      "id": "alquila-pers",
+      "label": "Vive en vivienda alquilada",
+      "value": 34.79654357648345,
+      "formatted": "34,8%"
+    },
+    {
+      "id": "electricidad",
+      "label": "Cocina con electricidad",
+      "value": 12.654524990518354,
+      "formatted": "12,7%"
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "distribucion-de-combustibles",
+      "config": {},
+      "id": "pie-combustible",
+      "type": "pie",
+      "title": "Combustible para cocinar — CABA",
+      "sectionTitle": "Distribución de Combustibles",
+      "data": [
+        {
+          "id": "Gas de red",
+          "label": "Gas de red",
+          "value": 2422422
+        },
+        {
+          "id": "Electricidad",
+          "label": "Electricidad",
+          "value": 391715
+        },
+        {
+          "id": "Gas en garrafa",
+          "label": "Gas en garrafa",
+          "value": 252875
+        },
+        {
+          "id": "Gas zeppelin",
+          "label": "Gas zeppelin",
+          "value": 18762
+        },
+        {
+          "id": "Leña o carbón",
+          "label": "Leña o carbón",
+          "value": 4779
+        },
+        {
+          "id": "Otro",
+          "label": "Otro",
+          "value": 4901
+        }
+      ]
+    },
+    {
+      "sectionId": "acceso-al-gas-de-red-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Gas de red %"
+      },
+      "id": "bar-gas-red-comuna",
+      "type": "bar",
+      "title": "% de población con gas de red por comuna",
+      "sectionTitle": "Acceso al Gas de Red por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Gas de red %": 62.4
+        },
+        {
+          "comuna": "Comuna 2",
+          "Gas de red %": 82.2
+        },
+        {
+          "comuna": "Comuna 3",
+          "Gas de red %": 82.8
+        },
+        {
+          "comuna": "Comuna 4",
+          "Gas de red %": 65
+        },
+        {
+          "comuna": "Comuna 5",
+          "Gas de red %": 85.3
+        },
+        {
+          "comuna": "Comuna 6",
+          "Gas de red %": 84.9
+        },
+        {
+          "comuna": "Comuna 7",
+          "Gas de red %": 82.5
+        },
+        {
+          "comuna": "Comuna 8",
+          "Gas de red %": 54.1
+        },
+        {
+          "comuna": "Comuna 9",
+          "Gas de red %": 82.3
+        },
+        {
+          "comuna": "Comuna 10",
+          "Gas de red %": 87.6
+        },
+        {
+          "comuna": "Comuna 11",
+          "Gas de red %": 86
+        },
+        {
+          "comuna": "Comuna 12",
+          "Gas de red %": 83.3
+        },
+        {
+          "comuna": "Comuna 13",
+          "Gas de red %": 81.4
+        },
+        {
+          "comuna": "Comuna 14",
+          "Gas de red %": 78.6
+        },
+        {
+          "comuna": "Comuna 15",
+          "Gas de red %": 80.2
+        }
+      ]
+    },
+    {
+      "sectionId": "materiales-de-piso",
+      "config": {},
+      "id": "pie-piso",
+      "type": "pie",
+      "title": "Material predominante de los pisos — CABA",
+      "sectionTitle": "Materiales de Piso",
+      "data": [
+        {
+          "id": "Cerámica/Mosaico/Madera",
+          "label": "Cerámica/Mosaico/Madera",
+          "value": 2984442
+        },
+        {
+          "id": "Carpeta/Contrapiso",
+          "label": "Carpeta/Contrapiso",
+          "value": 72943
+        },
+        {
+          "id": "Tierra/Ladrillo suelto",
+          "label": "Tierra/Ladrillo suelto",
+          "value": 9790
+        },
+        {
+          "id": "Otro material",
+          "label": "Otro material",
+          "value": 28279
+        }
+      ]
+    },
+    {
+      "sectionId": "procedencia-del-agua",
+      "config": {},
+      "id": "pie-agua",
+      "type": "pie",
+      "title": "Procedencia del agua — CABA",
+      "sectionTitle": "Procedencia del Agua",
+      "data": [
+        {
+          "id": "Red pública (agua corriente)",
+          "label": "Red pública (agua corriente)",
+          "value": 3024117
+        },
+        {
+          "id": "Perforación con bomba a motor",
+          "label": "Perforación con bomba a motor",
+          "value": 39190
+        },
+        {
+          "id": "Perforación con bomba manual",
+          "label": "Perforación con bomba manual",
+          "value": 4528
+        },
+        {
+          "id": "Pozo sin bomba",
+          "label": "Pozo sin bomba",
+          "value": 2281
+        },
+        {
+          "id": "Transporte por cisterna, agua de lluvi",
+          "label": "Transporte por cisterna, agua de lluvi",
+          "value": 3620
+        }
+      ]
+    },
+    {
+      "sectionId": "brecha-digital",
+      "config": {},
+      "id": "pie-internet",
+      "type": "pie",
+      "title": "Acceso a internet en la vivienda — CABA",
+      "sectionTitle": "Brecha Digital",
+      "data": [
+        {
+          "id": "Internet + dispositivo",
+          "label": "Internet + dispositivo",
+          "value": 2475637
+        },
+        {
+          "id": "Internet sin dispositivo",
+          "label": "Internet sin dispositivo",
+          "value": 364283
+        },
+        {
+          "id": "Sin internet",
+          "label": "Sin internet",
+          "value": 255534
+        }
+      ]
+    },
+    {
+      "sectionId": "tenencia-de-la-vivienda-personas",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "%",
+        "grouped": true
+      },
+      "id": "bar-tenencia-personas-comuna",
+      "type": "bar",
+      "title": "% personas en vivienda propia vs alquilada — por comuna",
+      "sectionTitle": "Tenencia de la Vivienda (Personas)",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Propia %": 43.1,
+          "Alquilada %": 46.4
+        },
+        {
+          "comuna": "Comuna 2",
+          "Propia %": 49.1,
+          "Alquilada %": 38.8
+        },
+        {
+          "comuna": "Comuna 3",
+          "Propia %": 41.7,
+          "Alquilada %": 47.9
+        },
+        {
+          "comuna": "Comuna 4",
+          "Propia %": 54.7,
+          "Alquilada %": 33.3
+        },
+        {
+          "comuna": "Comuna 5",
+          "Propia %": 49.8,
+          "Alquilada %": 40
+        },
+        {
+          "comuna": "Comuna 6",
+          "Propia %": 56.6,
+          "Alquilada %": 33.8
+        },
+        {
+          "comuna": "Comuna 7",
+          "Propia %": 56.7,
+          "Alquilada %": 33.1
+        },
+        {
+          "comuna": "Comuna 8",
+          "Propia %": 63.3,
+          "Alquilada %": 24.9
+        },
+        {
+          "comuna": "Comuna 9",
+          "Propia %": 58.8,
+          "Alquilada %": 29.7
+        },
+        {
+          "comuna": "Comuna 10",
+          "Propia %": 59.6,
+          "Alquilada %": 30.2
+        },
+        {
+          "comuna": "Comuna 11",
+          "Propia %": 61.9,
+          "Alquilada %": 28
+        },
+        {
+          "comuna": "Comuna 12",
+          "Propia %": 59.1,
+          "Alquilada %": 30.9
+        },
+        {
+          "comuna": "Comuna 13",
+          "Propia %": 56.8,
+          "Alquilada %": 33.2
+        },
+        {
+          "comuna": "Comuna 14",
+          "Propia %": 50.9,
+          "Alquilada %": 37.6
+        },
+        {
+          "comuna": "Comuna 15",
+          "Propia %": 55.2,
+          "Alquilada %": 33.9
+        }
+      ]
+    },
+    {
+      "sectionId": "cantidad-de-habitaciones",
+      "config": {},
+      "id": "pie-habitaciones",
+      "type": "pie",
+      "title": "Cantidad de habitaciones de la vivienda — CABA",
+      "sectionTitle": "Cantidad de Habitaciones",
+      "data": [
+        {
+          "id": "1",
+          "label": "1",
+          "value": 316602
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "value": 758632
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "value": 990469
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "value": 595750
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "value": 244258
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "value": 91876
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "value": 44380
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "value": 20065
+        }
+      ]
+    },
+    {
+      "sectionId": "saneamiento",
+      "config": {},
+      "id": "pie-cloaca-personas",
+      "type": "pie",
+      "title": "Ubicación del baño — CABA",
+      "sectionTitle": "Saneamiento",
+      "data": [
+        {
+          "id": "Dentro de la vivienda",
+          "label": "Dentro de la vivienda",
+          "value": 3028695
+        },
+        {
+          "id": "Fuera de la vivienda",
+          "label": "Fuera de la vivienda",
+          "value": 60904
+        },
+        {
+          "id": "No tiene baño",
+          "label": "No tiene baño",
+          "value": 5855
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "sectionId": "acceso-al-gas-de-red-por-comuna",
+      "id": "rank-garrafa",
+      "title": "Comunas con mayor uso de gas en garrafa",
+      "items": [
+        {
+          "name": "Comuna 8",
+          "value": 38.4,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 26.1,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 17.5,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 10,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 6.9,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 5.3,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 4.5,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 2.9,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 2.4,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 2.2,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 1.6,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 1.3,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 1,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 0.9,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 0.8,
+          "municipioId": "13"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "01",
+      "municipioNombre": "Comuna 1",
+      "value": 62.4,
+      "label": "62,4% con gas de red"
+    },
+    {
+      "municipioId": "02",
+      "municipioNombre": "Comuna 2",
+      "value": 82.2,
+      "label": "82,2% con gas de red"
+    },
+    {
+      "municipioId": "03",
+      "municipioNombre": "Comuna 3",
+      "value": 82.8,
+      "label": "82,8% con gas de red"
+    },
+    {
+      "municipioId": "04",
+      "municipioNombre": "Comuna 4",
+      "value": 65,
+      "label": "65,0% con gas de red"
+    },
+    {
+      "municipioId": "05",
+      "municipioNombre": "Comuna 5",
+      "value": 85.3,
+      "label": "85,3% con gas de red"
+    },
+    {
+      "municipioId": "06",
+      "municipioNombre": "Comuna 6",
+      "value": 84.9,
+      "label": "84,9% con gas de red"
+    },
+    {
+      "municipioId": "07",
+      "municipioNombre": "Comuna 7",
+      "value": 82.5,
+      "label": "82,5% con gas de red"
+    },
+    {
+      "municipioId": "08",
+      "municipioNombre": "Comuna 8",
+      "value": 54.1,
+      "label": "54,1% con gas de red"
+    },
+    {
+      "municipioId": "09",
+      "municipioNombre": "Comuna 9",
+      "value": 82.3,
+      "label": "82,3% con gas de red"
+    },
+    {
+      "municipioId": "10",
+      "municipioNombre": "Comuna 10",
+      "value": 87.6,
+      "label": "87,6% con gas de red"
+    },
+    {
+      "municipioId": "11",
+      "municipioNombre": "Comuna 11",
+      "value": 86,
+      "label": "86,0% con gas de red"
+    },
+    {
+      "municipioId": "12",
+      "municipioNombre": "Comuna 12",
+      "value": 83.3,
+      "label": "83,3% con gas de red"
+    },
+    {
+      "municipioId": "13",
+      "municipioNombre": "Comuna 13",
+      "value": 81.4,
+      "label": "81,4% con gas de red"
+    },
+    {
+      "municipioId": "14",
+      "municipioNombre": "Comuna 14",
+      "value": 78.6,
+      "label": "78,6% con gas de red"
+    },
+    {
+      "municipioId": "15",
+      "municipioNombre": "Comuna 15",
+      "value": 80.2,
+      "label": "80,2% con gas de red"
+    }
+  ]
+}

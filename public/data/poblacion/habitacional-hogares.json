@@ -1,0 +1,525 @@
+{
+  "meta": {
+    "id": "poblacion-habitacional-hogares",
+    "title": "Condiciones Habitacionales de los Hogares",
+    "category": "Población",
+    "subcategory": "Hábitat Hogares",
+    "source": "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)",
+    "date": "2022"
+  },
+  "kpis": [
+    {
+      "id": "total-hogares",
+      "label": "Total de hogares",
+      "value": 1406735,
+      "formatted": "1,4M"
+    },
+    {
+      "id": "propia",
+      "label": "Hogares en vivienda propia",
+      "value": 52.503207782560324,
+      "formatted": "52,5%"
+    },
+    {
+      "id": "alquilada",
+      "label": "Hogares en vivienda alquilada",
+      "value": 36.80636367190694,
+      "formatted": "36,8%"
+    },
+    {
+      "id": "gas-red-hog",
+      "label": "Hogares con gas de red",
+      "value": 78.52545077786506,
+      "formatted": "78,5%"
+    },
+    {
+      "id": "internet-hog",
+      "label": "Hogares con internet en la vivienda",
+      "value": 90.00074640923842,
+      "formatted": "90,0%"
+    },
+    {
+      "id": "agua-red",
+      "label": "Hogares con agua de red pública",
+      "value": 98.01384055987802,
+      "formatted": "98,0%"
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "regimen-de-tenencia",
+      "config": {},
+      "id": "pie-tenencia",
+      "type": "pie",
+      "title": "Régimen de tenencia de la vivienda — CABA",
+      "sectionTitle": "Régimen de Tenencia",
+      "data": [
+        {
+          "id": "Propia",
+          "label": "Propia",
+          "value": 738581
+        },
+        {
+          "id": "Alquilada",
+          "label": "Alquilada",
+          "value": 517768
+        },
+        {
+          "id": "Cedida por trabajo",
+          "label": "Cedida por trabajo",
+          "value": 23387
+        },
+        {
+          "id": "Otras situaciones",
+          "label": "Otras situaciones",
+          "value": 126999
+        }
+      ]
+    },
+    {
+      "sectionId": "alquiler-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Alquiler %"
+      },
+      "id": "bar-alquiler-comuna",
+      "type": "bar",
+      "title": "% de hogares en vivienda alquilada por comuna",
+      "sectionTitle": "Alquiler por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Alquiler %": 48.3
+        },
+        {
+          "comuna": "Comuna 2",
+          "Alquiler %": 41.3
+        },
+        {
+          "comuna": "Comuna 3",
+          "Alquiler %": 47.9
+        },
+        {
+          "comuna": "Comuna 4",
+          "Alquiler %": 34.5
+        },
+        {
+          "comuna": "Comuna 5",
+          "Alquiler %": 41.3
+        },
+        {
+          "comuna": "Comuna 6",
+          "Alquiler %": 35.3
+        },
+        {
+          "comuna": "Comuna 7",
+          "Alquiler %": 34
+        },
+        {
+          "comuna": "Comuna 8",
+          "Alquiler %": 25.7
+        },
+        {
+          "comuna": "Comuna 9",
+          "Alquiler %": 30
+        },
+        {
+          "comuna": "Comuna 10",
+          "Alquiler %": 30.9
+        },
+        {
+          "comuna": "Comuna 11",
+          "Alquiler %": 29.2
+        },
+        {
+          "comuna": "Comuna 12",
+          "Alquiler %": 33.9
+        },
+        {
+          "comuna": "Comuna 13",
+          "Alquiler %": 35.1
+        },
+        {
+          "comuna": "Comuna 14",
+          "Alquiler %": 40.4
+        },
+        {
+          "comuna": "Comuna 15",
+          "Alquiler %": 36.5
+        }
+      ]
+    },
+    {
+      "sectionId": "materiales-del-piso-hogares",
+      "config": {},
+      "id": "pie-piso-hogares",
+      "type": "pie",
+      "title": "Material predominante de los pisos — Hogares CABA",
+      "sectionTitle": "Materiales del Piso (Hogares)",
+      "data": [
+        {
+          "id": "Cerámica/Mosaico/Madera",
+          "label": "Cerámica/Mosaico/Madera",
+          "value": 1364396
+        },
+        {
+          "id": "Carpeta/Contrapiso",
+          "label": "Carpeta/Contrapiso",
+          "value": 26416
+        },
+        {
+          "id": "Tierra/Ladrillo suelto",
+          "label": "Tierra/Ladrillo suelto",
+          "value": 3585
+        },
+        {
+          "id": "Otro material",
+          "label": "Otro material",
+          "value": 12338
+        }
+      ]
+    },
+    {
+      "sectionId": "procedencia-del-agua-hogares",
+      "config": {},
+      "id": "pie-agua-hogares",
+      "type": "pie",
+      "title": "Procedencia del agua — Hogares CABA",
+      "sectionTitle": "Procedencia del Agua (Hogares)",
+      "data": [
+        {
+          "id": "Red pública (agua corriente)",
+          "label": "Red pública (agua corriente)",
+          "value": 1378795
+        },
+        {
+          "id": "Perforación con bomba a motor",
+          "label": "Perforación con bomba a motor",
+          "value": 14606
+        },
+        {
+          "id": "Perforación con bomba manual",
+          "label": "Perforación con bomba manual",
+          "value": 1674
+        },
+        {
+          "id": "Pozo sin bomba",
+          "label": "Pozo sin bomba",
+          "value": 789
+        },
+        {
+          "id": "Transporte por cisterna, agua de lluvi",
+          "label": "Transporte por cisterna, agua de lluvi",
+          "value": 1330
+        }
+      ]
+    },
+    {
+      "sectionId": "brecha-digital-hogares",
+      "config": {},
+      "id": "pie-internet-hogares",
+      "type": "pie",
+      "title": "Acceso a internet en la vivienda — Hogares CABA",
+      "sectionTitle": "Brecha Digital (Hogares)",
+      "data": [
+        {
+          "id": "Internet + dispositivo",
+          "label": "Internet + dispositivo",
+          "value": 1100360
+        },
+        {
+          "id": "Internet sin dispositivo",
+          "label": "Internet sin dispositivo",
+          "value": 165712
+        },
+        {
+          "id": "Sin internet",
+          "label": "Sin internet",
+          "value": 140663
+        }
+      ]
+    },
+    {
+      "sectionId": "saneamiento-hogares",
+      "config": {},
+      "id": "pie-cloaca-hogares",
+      "type": "pie",
+      "title": "Ubicación del baño — Hogares CABA",
+      "sectionTitle": "Saneamiento (Hogares)",
+      "data": [
+        {
+          "id": "Dentro de la vivienda",
+          "label": "Dentro de la vivienda",
+          "value": 1376373
+        },
+        {
+          "id": "Fuera de la vivienda",
+          "label": "Fuera de la vivienda",
+          "value": 27870
+        },
+        {
+          "id": "No tiene baño",
+          "label": "No tiene baño",
+          "value": 2492
+        }
+      ]
+    },
+    {
+      "sectionId": "cantidad-de-habitaciones-hogares",
+      "config": {},
+      "id": "pie-habitaciones-hogares",
+      "type": "pie",
+      "title": "Cantidad de habitaciones por hogar — CABA",
+      "sectionTitle": "Cantidad de Habitaciones (Hogares)",
+      "data": [
+        {
+          "id": "1",
+          "label": "1",
+          "value": 195936
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "value": 411593
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "value": 426168
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "value": 223908
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "value": 84683
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "value": 30042
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "value": 15201
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "value": 6724
+        }
+      ]
+    },
+    {
+      "sectionId": "cantidad-de-banos-por-hogar",
+      "config": {},
+      "id": "pie-banos",
+      "type": "pie",
+      "title": "Cantidad de baños por hogar — CABA",
+      "sectionTitle": "Cantidad de Baños por Hogar",
+      "data": [
+        {
+          "id": "1 baño",
+          "label": "1 baño",
+          "value": 892448
+        },
+        {
+          "id": "2 baños",
+          "label": "2 baños",
+          "value": 354263
+        },
+        {
+          "id": "3 o más baños",
+          "label": "3 o más baños",
+          "value": 157532
+        },
+        {
+          "id": "No tiene baño",
+          "label": "No tiene baño",
+          "value": 2492
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "sectionId": "alquiler-por-comuna",
+      "id": "rank-alquiler",
+      "title": "Comunas con mayor % de alquiler",
+      "items": [
+        {
+          "name": "Comuna 1",
+          "value": 48.3,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 47.9,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 41.3,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 41.3,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 40.4,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 36.5,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 35.3,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 35.1,
+          "municipioId": "13"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 34.5,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 34,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 33.9,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 30.9,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 30,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 29.2,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 8",
+          "value": 25.7,
+          "municipioId": "08"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "01",
+      "municipioNombre": "Comuna 1",
+      "value": 48.3,
+      "label": "48,3% alquiler"
+    },
+    {
+      "municipioId": "02",
+      "municipioNombre": "Comuna 2",
+      "value": 41.3,
+      "label": "41,3% alquiler"
+    },
+    {
+      "municipioId": "03",
+      "municipioNombre": "Comuna 3",
+      "value": 47.9,
+      "label": "47,9% alquiler"
+    },
+    {
+      "municipioId": "04",
+      "municipioNombre": "Comuna 4",
+      "value": 34.5,
+      "label": "34,5% alquiler"
+    },
+    {
+      "municipioId": "05",
+      "municipioNombre": "Comuna 5",
+      "value": 41.3,
+      "label": "41,3% alquiler"
+    },
+    {
+      "municipioId": "06",
+      "municipioNombre": "Comuna 6",
+      "value": 35.3,
+      "label": "35,3% alquiler"
+    },
+    {
+      "municipioId": "07",
+      "municipioNombre": "Comuna 7",
+      "value": 34,
+      "label": "34,0% alquiler"
+    },
+    {
+      "municipioId": "08",
+      "municipioNombre": "Comuna 8",
+      "value": 25.7,
+      "label": "25,7% alquiler"
+    },
+    {
+      "municipioId": "09",
+      "municipioNombre": "Comuna 9",
+      "value": 30,
+      "label": "30,0% alquiler"
+    },
+    {
+      "municipioId": "10",
+      "municipioNombre": "Comuna 10",
+      "value": 30.9,
+      "label": "30,9% alquiler"
+    },
+    {
+      "municipioId": "11",
+      "municipioNombre": "Comuna 11",
+      "value": 29.2,
+      "label": "29,2% alquiler"
+    },
+    {
+      "municipioId": "12",
+      "municipioNombre": "Comuna 12",
+      "value": 33.9,
+      "label": "33,9% alquiler"
+    },
+    {
+      "municipioId": "13",
+      "municipioNombre": "Comuna 13",
+      "value": 35.1,
+      "label": "35,1% alquiler"
+    },
+    {
+      "municipioId": "14",
+      "municipioNombre": "Comuna 14",
+      "value": 40.4,
+      "label": "40,4% alquiler"
+    },
+    {
+      "municipioId": "15",
+      "municipioNombre": "Comuna 15",
+      "value": 36.5,
+      "label": "36,5% alquiler"
+    }
+  ]
+}

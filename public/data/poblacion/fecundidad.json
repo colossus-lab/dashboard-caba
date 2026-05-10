@@ -1,0 +1,482 @@
+{
+  "meta": {
+    "id": "poblacion-fecundidad",
+    "title": "Fecundidad",
+    "category": "Población",
+    "subcategory": "Fecundidad",
+    "source": "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)",
+    "date": "2022"
+  },
+  "kpis": [
+    {
+      "id": "mujeres-14-49",
+      "label": "Mujeres de 14 a 49 años",
+      "value": 835595,
+      "formatted": "835,6K"
+    },
+    {
+      "id": "promedio-hijos",
+      "label": "Promedio de hijos por mujer",
+      "value": 0.9,
+      "formatted": "0,9"
+    },
+    {
+      "id": "sin-hijos",
+      "label": "Mujeres sin hijos",
+      "value": 57.36846199414788,
+      "formatted": "57,4%"
+    },
+    {
+      "id": "tres-o-mas",
+      "label": "Mujeres con 3 o más hijos",
+      "value": 9.140432865203838,
+      "formatted": "9,1%"
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "distribucion-por-cantidad-de-hijos",
+      "config": {},
+      "id": "pie-cant-hijos",
+      "type": "pie",
+      "title": "Cantidad de hijas e hijos nacidos vivos — CABA",
+      "sectionTitle": "Distribución por Cantidad de Hijos",
+      "data": [
+        {
+          "id": "Ninguno",
+          "label": "Ninguno",
+          "value": 479368
+        },
+        {
+          "id": "1",
+          "label": "1",
+          "value": 146014
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "value": 133836
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "value": 45535
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "value": 15172
+        },
+        {
+          "id": "5 y más",
+          "label": "5 y más",
+          "value": 15670
+        }
+      ]
+    },
+    {
+      "sectionId": "promedio-de-hijos-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Promedio hijos"
+      },
+      "id": "bar-prom-hijos-comuna",
+      "type": "bar",
+      "title": "Promedio de hijos por mujer — por comuna",
+      "sectionTitle": "Promedio de Hijos por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Promedio hijos": 1
+        },
+        {
+          "comuna": "Comuna 2",
+          "Promedio hijos": 0.6
+        },
+        {
+          "comuna": "Comuna 3",
+          "Promedio hijos": 0.9
+        },
+        {
+          "comuna": "Comuna 4",
+          "Promedio hijos": 1.2
+        },
+        {
+          "comuna": "Comuna 5",
+          "Promedio hijos": 0.7
+        },
+        {
+          "comuna": "Comuna 6",
+          "Promedio hijos": 0.7
+        },
+        {
+          "comuna": "Comuna 7",
+          "Promedio hijos": 1
+        },
+        {
+          "comuna": "Comuna 8",
+          "Promedio hijos": 1.4
+        },
+        {
+          "comuna": "Comuna 9",
+          "Promedio hijos": 1.1
+        },
+        {
+          "comuna": "Comuna 10",
+          "Promedio hijos": 0.9
+        },
+        {
+          "comuna": "Comuna 11",
+          "Promedio hijos": 0.8
+        },
+        {
+          "comuna": "Comuna 12",
+          "Promedio hijos": 0.7
+        },
+        {
+          "comuna": "Comuna 13",
+          "Promedio hijos": 0.7
+        },
+        {
+          "comuna": "Comuna 14",
+          "Promedio hijos": 0.6
+        },
+        {
+          "comuna": "Comuna 15",
+          "Promedio hijos": 0.8
+        }
+      ]
+    },
+    {
+      "sectionId": "fecundidad-y-educacion",
+      "config": {
+        "xAxis": "nivel",
+        "yAxis": "Promedio hijos"
+      },
+      "id": "bar-fecundidad-educacion",
+      "type": "bar",
+      "title": "Promedio de hijos según máximo nivel educativo alcanzado",
+      "sectionTitle": "Fecundidad y Educación",
+      "data": [
+        {
+          "nivel": "Sin instrucción / Primario",
+          "Promedio hijos": 2.12,
+          "% sin hijos": 19.9
+        },
+        {
+          "nivel": "Secundario / Polimodal",
+          "Promedio hijos": 1.39,
+          "% sin hijos": 34.1
+        },
+        {
+          "nivel": "Terciario no univ.",
+          "Promedio hijos": 1.04,
+          "% sin hijos": 42.6
+        },
+        {
+          "nivel": "Universitario",
+          "Promedio hijos": 0.83,
+          "% sin hijos": 53.3
+        },
+        {
+          "nivel": "Posgrado",
+          "Promedio hijos": 0.86,
+          "% sin hijos": 49.9
+        }
+      ]
+    },
+    {
+      "sectionId": "fecundidad-por-edad",
+      "config": {
+        "xAxis": "edad",
+        "yAxis": "Valor"
+      },
+      "id": "line-fec-edad",
+      "type": "line",
+      "title": "Promedio de hijos y % sin hijos según edad — CABA",
+      "sectionTitle": "Fecundidad por Edad",
+      "data": [
+        {
+          "edad": "14",
+          "Promedio hijos": 0,
+          "% sin hijos": 99.9
+        },
+        {
+          "edad": "15-19",
+          "Promedio hijos": 0,
+          "% sin hijos": 98.3
+        },
+        {
+          "edad": "20-24",
+          "Promedio hijos": 0.2,
+          "% sin hijos": 88.9
+        },
+        {
+          "edad": "25-29",
+          "Promedio hijos": 0.5,
+          "% sin hijos": 75.6
+        },
+        {
+          "edad": "30-34",
+          "Promedio hijos": 0.8,
+          "% sin hijos": 60
+        },
+        {
+          "edad": "35-39",
+          "Promedio hijos": 1.2,
+          "% sin hijos": 39.6
+        },
+        {
+          "edad": "40-44",
+          "Promedio hijos": 1.6,
+          "% sin hijos": 25.4
+        },
+        {
+          "edad": "45-49",
+          "Promedio hijos": 1.8,
+          "% sin hijos": 20.3
+        }
+      ]
+    },
+    {
+      "sectionId": "fecundidad-y-cobertura-de-salud",
+      "config": {
+        "xAxis": "cobertura",
+        "yAxis": "Valor",
+        "grouped": true
+      },
+      "id": "bar-fec-cobertura",
+      "type": "bar",
+      "title": "Hijos según tipo de cobertura de salud",
+      "sectionTitle": "Fecundidad y Cobertura de Salud",
+      "data": [
+        {
+          "cobertura": "Obra social o prepaga (incluye…",
+          "Promedio hijos": 0.75,
+          "% sin hijos": 59.4
+        },
+        {
+          "cobertura": "Programas o planes estatales d…",
+          "Promedio hijos": 1.19,
+          "% sin hijos": 46.5
+        },
+        {
+          "cobertura": "No tiene obra social, prepaga …",
+          "Promedio hijos": 1.12,
+          "% sin hijos": 50.4
+        }
+      ]
+    },
+    {
+      "sectionId": "fecundidad-y-condicion-de-actividad",
+      "config": {
+        "xAxis": "condicion",
+        "yAxis": "Valor",
+        "grouped": true
+      },
+      "id": "bar-fec-actividad",
+      "type": "bar",
+      "title": "Hijos según condición de actividad económica",
+      "sectionTitle": "Fecundidad y Condición de Actividad",
+      "data": [
+        {
+          "condicion": "Población económicamente activa",
+          "Promedio hijos": 0.9,
+          "% sin hijos": 53.2
+        },
+        {
+          "condicion": "Ocupada",
+          "Promedio hijos": 0.91,
+          "% sin hijos": 52.3
+        },
+        {
+          "condicion": "Desocupada",
+          "Promedio hijos": 0.78,
+          "% sin hijos": 61.3
+        },
+        {
+          "condicion": "Población económicamente inact…",
+          "Promedio hijos": 0.63,
+          "% sin hijos": 71
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "sectionId": "promedio-de-hijos-por-comuna",
+      "id": "rank-prom-hijos",
+      "title": "Comunas con mayor promedio de hijos",
+      "items": [
+        {
+          "name": "Comuna 8",
+          "value": 1.4,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 1.2,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 1.1,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 1,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 1,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 0.9,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 0.9,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 0.8,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 0.8,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 0.7,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 0.7,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 0.7,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 0.7,
+          "municipioId": "13"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 0.6,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 0.6,
+          "municipioId": "14"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "01",
+      "municipioNombre": "Comuna 1",
+      "value": 1,
+      "label": "1,0 hijos/mujer"
+    },
+    {
+      "municipioId": "02",
+      "municipioNombre": "Comuna 2",
+      "value": 0.6,
+      "label": "0,6 hijos/mujer"
+    },
+    {
+      "municipioId": "03",
+      "municipioNombre": "Comuna 3",
+      "value": 0.9,
+      "label": "0,9 hijos/mujer"
+    },
+    {
+      "municipioId": "04",
+      "municipioNombre": "Comuna 4",
+      "value": 1.2,
+      "label": "1,2 hijos/mujer"
+    },
+    {
+      "municipioId": "05",
+      "municipioNombre": "Comuna 5",
+      "value": 0.7,
+      "label": "0,7 hijos/mujer"
+    },
+    {
+      "municipioId": "06",
+      "municipioNombre": "Comuna 6",
+      "value": 0.7,
+      "label": "0,7 hijos/mujer"
+    },
+    {
+      "municipioId": "07",
+      "municipioNombre": "Comuna 7",
+      "value": 1,
+      "label": "1,0 hijos/mujer"
+    },
+    {
+      "municipioId": "08",
+      "municipioNombre": "Comuna 8",
+      "value": 1.4,
+      "label": "1,4 hijos/mujer"
+    },
+    {
+      "municipioId": "09",
+      "municipioNombre": "Comuna 9",
+      "value": 1.1,
+      "label": "1,1 hijos/mujer"
+    },
+    {
+      "municipioId": "10",
+      "municipioNombre": "Comuna 10",
+      "value": 0.9,
+      "label": "0,9 hijos/mujer"
+    },
+    {
+      "municipioId": "11",
+      "municipioNombre": "Comuna 11",
+      "value": 0.8,
+      "label": "0,8 hijos/mujer"
+    },
+    {
+      "municipioId": "12",
+      "municipioNombre": "Comuna 12",
+      "value": 0.7,
+      "label": "0,7 hijos/mujer"
+    },
+    {
+      "municipioId": "13",
+      "municipioNombre": "Comuna 13",
+      "value": 0.7,
+      "label": "0,7 hijos/mujer"
+    },
+    {
+      "municipioId": "14",
+      "municipioNombre": "Comuna 14",
+      "value": 0.6,
+      "label": "0,6 hijos/mujer"
+    },
+    {
+      "municipioId": "15",
+      "municipioNombre": "Comuna 15",
+      "value": 0.8,
+      "label": "0,8 hijos/mujer"
+    }
+  ]
+}

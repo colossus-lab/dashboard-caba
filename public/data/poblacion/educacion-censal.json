@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "id": "poblacion-educacion-censal",
+    "title": "Asistencia Educativa de la Población",
+    "category": "Población",
+    "subcategory": "Educación",
+    "source": "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)",
+    "date": "2022"
+  },
+  "kpis": [
+    {
+      "id": "asiste",
+      "label": "Asiste a un establecimiento",
+      "value": 32.02266937257023,
+      "formatted": "32,0%"
+    },
+    {
+      "id": "superior",
+      "label": "Con nivel superior alcanzado",
+      "value": 54.32023563288922,
+      "formatted": "54,3%",
+      "comparison": "terciario, universitario o posgrado"
+    },
+    {
+      "id": "no-asiste",
+      "label": "No asiste pero asistió",
+      "value": 64.88046664560352,
+      "formatted": "64,9%"
+    },
+    {
+      "id": "nunca",
+      "label": "Nunca asistió",
+      "value": 3.096863981826252,
+      "formatted": "3,1%",
+      "status": "warning"
+    },
+    {
+      "id": "universitarios",
+      "label": "Asisten a universitario de grado",
+      "value": 263810,
+      "formatted": "263,8K"
+    },
+    {
+      "id": "posgrado-pop",
+      "label": "Con posgrado alcanzado",
+      "value": 164969,
+      "formatted": "165,0K"
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "condicion-de-asistencia",
+      "config": {},
+      "id": "pie-asistencia",
+      "type": "pie",
+      "title": "Condición de asistencia escolar — CABA",
+      "sectionTitle": "Condición de Asistencia",
+      "data": [
+        {
+          "id": "Asiste",
+          "label": "Asiste",
+          "value": 991247
+        },
+        {
+          "id": "Asistió (no asiste)",
+          "label": "Asistió (no asiste)",
+          "value": 2008345
+        },
+        {
+          "id": "Nunca asistió",
+          "label": "Nunca asistió",
+          "value": 95862
+        }
+      ]
+    },
+    {
+      "sectionId": "nivel-educativo-en-curso",
+      "config": {
+        "xAxis": "nivel",
+        "yAxis": "Población"
+      },
+      "id": "bar-niveles",
+      "type": "bar",
+      "title": "Población por nivel educativo en curso",
+      "sectionTitle": "Nivel Educativo en Curso",
+      "data": [
+        {
+          "nivel": "Jardín maternal/centro primera infancia",
+          "Población": 55232
+        },
+        {
+          "nivel": "Sala de 4 o 5 (jardín)",
+          "Población": 54794
+        },
+        {
+          "nivel": "Primario",
+          "Población": 248575
+        },
+        {
+          "nivel": "Secundario",
+          "Población": 218743
+        },
+        {
+          "nivel": "Terciario no universitario",
+          "Población": 93897
+        },
+        {
+          "nivel": "Universitario de grado",
+          "Población": 263810
+        },
+        {
+          "nivel": "Posgrado",
+          "Población": 56196
+        }
+      ]
+    },
+    {
+      "sectionId": "maximo-nivel-educativo-alcanzado",
+      "config": {},
+      "id": "pie-max-nivel",
+      "type": "pie",
+      "title": "Máximo nivel educativo alcanzado — CABA (5 años y más que asistió)",
+      "sectionTitle": "Máximo Nivel Educativo Alcanzado",
+      "data": [
+        {
+          "id": "Sin instrucción",
+          "label": "Sin instrucción",
+          "value": 11165
+        },
+        {
+          "id": "Primario/EGB",
+          "label": "Primario/EGB",
+          "value": 212206
+        },
+        {
+          "id": "Secundario/Polimodal",
+          "label": "Secundario/Polimodal",
+          "value": 672705
+        },
+        {
+          "id": "Terciario no univ.",
+          "label": "Terciario no univ.",
+          "value": 323495
+        },
+        {
+          "id": "Universitario grado",
+          "label": "Universitario grado",
+          "value": 600371
+        },
+        {
+          "id": "Posgrado",
+          "label": "Posgrado",
+          "value": 164969
+        }
+      ]
+    }
+  ],
+  "rankings": [],
+  "mapData": []
+}

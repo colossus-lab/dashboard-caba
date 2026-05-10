@@ -1,0 +1,430 @@
+{
+  "meta": {
+    "id": "poblacion-viviendas",
+    "title": "Stock Habitacional y Viviendas",
+    "category": "Población",
+    "subcategory": "Viviendas",
+    "source": "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)",
+    "date": "2022"
+  },
+  "kpis": [
+    {
+      "id": "total-viv",
+      "label": "Total de viviendas",
+      "value": 1615300,
+      "formatted": "1,6M"
+    },
+    {
+      "id": "particulares",
+      "label": "Viviendas particulares",
+      "value": 1614354,
+      "formatted": "1,6M"
+    },
+    {
+      "id": "depto-pct",
+      "label": "Departamentos",
+      "value": 73.69560498484105,
+      "formatted": "73,7%",
+      "comparison": "del stock particular"
+    },
+    {
+      "id": "desocupadas",
+      "label": "Viviendas desocupadas",
+      "value": 13.811428217668546,
+      "formatted": "13,8%",
+      "status": "warning"
+    },
+    {
+      "id": "hacinamiento-viv",
+      "label": "Viviendas con 2+ hogares",
+      "value": 1.0116024490065827,
+      "formatted": "1,0%",
+      "comparison": "hacinamiento residencial"
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "tipo-de-vivienda",
+      "config": {},
+      "id": "pie-tipo-vivienda",
+      "type": "pie",
+      "title": "Tipo de vivienda particular — CABA",
+      "sectionTitle": "Tipo de Vivienda",
+      "data": [
+        {
+          "id": "Departamento",
+          "label": "Departamento",
+          "value": 1025296
+        },
+        {
+          "id": "Casa",
+          "label": "Casa",
+          "value": 314375
+        },
+        {
+          "id": "Pieza/Inquilinato",
+          "label": "Pieza/Inquilinato",
+          "value": 39848
+        },
+        {
+          "id": "Rancho/Casilla",
+          "label": "Rancho/Casilla",
+          "value": 6273
+        },
+        {
+          "id": "Otros",
+          "label": "Otros",
+          "value": 5466
+        }
+      ]
+    },
+    {
+      "sectionId": "desocupacion-de-viviendas-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Desocupadas %"
+      },
+      "id": "bar-desoc-comuna",
+      "type": "bar",
+      "title": "% de viviendas desocupadas por comuna",
+      "sectionTitle": "Desocupación de Viviendas por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Desocupadas %": 19.3
+        },
+        {
+          "comuna": "Comuna 2",
+          "Desocupadas %": 22.7
+        },
+        {
+          "comuna": "Comuna 3",
+          "Desocupadas %": 17.1
+        },
+        {
+          "comuna": "Comuna 4",
+          "Desocupadas %": 10.8
+        },
+        {
+          "comuna": "Comuna 5",
+          "Desocupadas %": 13
+        },
+        {
+          "comuna": "Comuna 6",
+          "Desocupadas %": 11.3
+        },
+        {
+          "comuna": "Comuna 7",
+          "Desocupadas %": 9.7
+        },
+        {
+          "comuna": "Comuna 8",
+          "Desocupadas %": 5.1
+        },
+        {
+          "comuna": "Comuna 9",
+          "Desocupadas %": 12.5
+        },
+        {
+          "comuna": "Comuna 10",
+          "Desocupadas %": 13
+        },
+        {
+          "comuna": "Comuna 11",
+          "Desocupadas %": 13.7
+        },
+        {
+          "comuna": "Comuna 12",
+          "Desocupadas %": 11.4
+        },
+        {
+          "comuna": "Comuna 13",
+          "Desocupadas %": 13.2
+        },
+        {
+          "comuna": "Comuna 14",
+          "Desocupadas %": 16.1
+        },
+        {
+          "comuna": "Comuna 15",
+          "Desocupadas %": 12.6
+        }
+      ]
+    },
+    {
+      "sectionId": "hogares-por-vivienda",
+      "config": {},
+      "id": "pie-hogares-vivienda",
+      "type": "pie",
+      "title": "Cantidad de hogares por vivienda — CABA",
+      "sectionTitle": "Hogares por Vivienda",
+      "data": [
+        {
+          "id": "1 hogar",
+          "label": "1 hogar",
+          "value": 1377184
+        },
+        {
+          "id": "2 hogares",
+          "label": "2 hogares",
+          "value": 13091
+        },
+        {
+          "id": "3 o más hogares",
+          "label": "3 o más hogares",
+          "value": 983
+        }
+      ]
+    },
+    {
+      "sectionId": "hacinamiento-residencial-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Hacinamiento %"
+      },
+      "id": "bar-hacinamiento-comuna",
+      "type": "bar",
+      "title": "Viviendas con 2 o más hogares por comuna",
+      "sectionTitle": "Hacinamiento Residencial por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Hacinamiento %": 1.3
+        },
+        {
+          "comuna": "Comuna 2",
+          "Hacinamiento %": 0.9
+        },
+        {
+          "comuna": "Comuna 3",
+          "Hacinamiento %": 1.1
+        },
+        {
+          "comuna": "Comuna 4",
+          "Hacinamiento %": 1.1
+        },
+        {
+          "comuna": "Comuna 5",
+          "Hacinamiento %": 1
+        },
+        {
+          "comuna": "Comuna 6",
+          "Hacinamiento %": 0.9
+        },
+        {
+          "comuna": "Comuna 7",
+          "Hacinamiento %": 1
+        },
+        {
+          "comuna": "Comuna 8",
+          "Hacinamiento %": 1.6
+        },
+        {
+          "comuna": "Comuna 9",
+          "Hacinamiento %": 1.1
+        },
+        {
+          "comuna": "Comuna 10",
+          "Hacinamiento %": 0.8
+        },
+        {
+          "comuna": "Comuna 11",
+          "Hacinamiento %": 1
+        },
+        {
+          "comuna": "Comuna 12",
+          "Hacinamiento %": 0.9
+        },
+        {
+          "comuna": "Comuna 13",
+          "Hacinamiento %": 0.7
+        },
+        {
+          "comuna": "Comuna 14",
+          "Hacinamiento %": 0.9
+        },
+        {
+          "comuna": "Comuna 15",
+          "Hacinamiento %": 0.9
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "sectionId": "hacinamiento-residencial-por-comuna",
+      "id": "rank-hacinamiento",
+      "title": "Comunas con mayor hacinamiento residencial",
+      "items": [
+        {
+          "name": "Comuna 8",
+          "value": 1.65,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 1.29,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 1.14,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 1.13,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 1.1,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 1.04,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 1.03,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 1.03,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 0.91,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 0.91,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 0.9,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 0.9,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 0.87,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 0.85,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 0.72,
+          "municipioId": "13"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "01",
+      "municipioNombre": "Comuna 1",
+      "value": 19.3,
+      "label": "19,3% desocupadas"
+    },
+    {
+      "municipioId": "02",
+      "municipioNombre": "Comuna 2",
+      "value": 22.7,
+      "label": "22,7% desocupadas"
+    },
+    {
+      "municipioId": "03",
+      "municipioNombre": "Comuna 3",
+      "value": 17.1,
+      "label": "17,1% desocupadas"
+    },
+    {
+      "municipioId": "04",
+      "municipioNombre": "Comuna 4",
+      "value": 10.8,
+      "label": "10,8% desocupadas"
+    },
+    {
+      "municipioId": "05",
+      "municipioNombre": "Comuna 5",
+      "value": 13,
+      "label": "13,0% desocupadas"
+    },
+    {
+      "municipioId": "06",
+      "municipioNombre": "Comuna 6",
+      "value": 11.3,
+      "label": "11,3% desocupadas"
+    },
+    {
+      "municipioId": "07",
+      "municipioNombre": "Comuna 7",
+      "value": 9.7,
+      "label": "9,7% desocupadas"
+    },
+    {
+      "municipioId": "08",
+      "municipioNombre": "Comuna 8",
+      "value": 5.1,
+      "label": "5,1% desocupadas"
+    },
+    {
+      "municipioId": "09",
+      "municipioNombre": "Comuna 9",
+      "value": 12.5,
+      "label": "12,5% desocupadas"
+    },
+    {
+      "municipioId": "10",
+      "municipioNombre": "Comuna 10",
+      "value": 13,
+      "label": "13,0% desocupadas"
+    },
+    {
+      "municipioId": "11",
+      "municipioNombre": "Comuna 11",
+      "value": 13.7,
+      "label": "13,7% desocupadas"
+    },
+    {
+      "municipioId": "12",
+      "municipioNombre": "Comuna 12",
+      "value": 11.4,
+      "label": "11,4% desocupadas"
+    },
+    {
+      "municipioId": "13",
+      "municipioNombre": "Comuna 13",
+      "value": 13.2,
+      "label": "13,2% desocupadas"
+    },
+    {
+      "municipioId": "14",
+      "municipioNombre": "Comuna 14",
+      "value": 16.1,
+      "label": "16,1% desocupadas"
+    },
+    {
+      "municipioId": "15",
+      "municipioNombre": "Comuna 15",
+      "value": 12.6,
+      "label": "12,6% desocupadas"
+    }
+  ]
+}

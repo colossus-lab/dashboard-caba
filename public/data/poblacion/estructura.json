@@ -1,0 +1,1016 @@
+{
+  "meta": {
+    "id": "poblacion-estructura",
+    "title": "Estructura por Sexo y Edad",
+    "category": "Población",
+    "subcategory": "Estructura",
+    "source": "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)",
+    "date": "2022"
+  },
+  "kpis": [
+    {
+      "id": "pob-total-2022",
+      "label": "Población total CABA (2022)",
+      "value": 3121707,
+      "formatted": "3,1M",
+      "unit": "hab."
+    },
+    {
+      "id": "densidad",
+      "label": "Densidad poblacional",
+      "value": 15161.3,
+      "formatted": "15.161",
+      "unit": "hab./km²"
+    },
+    {
+      "id": "edad-mediana",
+      "label": "Edad mediana",
+      "value": 39,
+      "formatted": "39",
+      "unit": "años"
+    },
+    {
+      "id": "var-pct",
+      "label": "Crecimiento decenal",
+      "value": 8,
+      "formatted": "8,0%",
+      "comparison": "respecto a 2010"
+    },
+    {
+      "id": "superficie",
+      "label": "Superficie",
+      "value": 205.9,
+      "formatted": "205,9",
+      "unit": "km²"
+    },
+    {
+      "id": "var-abs",
+      "label": "Variación absoluta vs 2010",
+      "value": 231556,
+      "formatted": "231.556",
+      "unit": "hab."
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "poblacion-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Población",
+        "layout": "vertical"
+      },
+      "id": "bar-pob-comuna",
+      "type": "bar",
+      "title": "Población 2022 por comuna",
+      "sectionTitle": "Población por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Población": 223554
+        },
+        {
+          "comuna": "Comuna 2",
+          "Población": 161645
+        },
+        {
+          "comuna": "Comuna 3",
+          "Población": 196240
+        },
+        {
+          "comuna": "Comuna 4",
+          "Población": 229240
+        },
+        {
+          "comuna": "Comuna 5",
+          "Población": 194271
+        },
+        {
+          "comuna": "Comuna 6",
+          "Población": 203043
+        },
+        {
+          "comuna": "Comuna 7",
+          "Población": 215896
+        },
+        {
+          "comuna": "Comuna 8",
+          "Población": 204367
+        },
+        {
+          "comuna": "Comuna 9",
+          "Población": 169063
+        },
+        {
+          "comuna": "Comuna 10",
+          "Población": 173004
+        },
+        {
+          "comuna": "Comuna 11",
+          "Población": 204601
+        },
+        {
+          "comuna": "Comuna 12",
+          "Población": 236887
+        },
+        {
+          "comuna": "Comuna 13",
+          "Población": 264385
+        },
+        {
+          "comuna": "Comuna 14",
+          "Población": 248635
+        },
+        {
+          "comuna": "Comuna 15",
+          "Población": 196876
+        }
+      ]
+    },
+    {
+      "sectionId": "crecimiento-decenal",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Variación %",
+        "layout": "vertical"
+      },
+      "id": "bar-var-comuna",
+      "type": "bar",
+      "title": "Variación % de población 2010-2022",
+      "sectionTitle": "Crecimiento Decenal",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Variación %": 8.6
+        },
+        {
+          "comuna": "Comuna 2",
+          "Variación %": 2.4
+        },
+        {
+          "comuna": "Comuna 3",
+          "Variación %": 4.6
+        },
+        {
+          "comuna": "Comuna 4",
+          "Variación %": 5
+        },
+        {
+          "comuna": "Comuna 5",
+          "Variación %": 8.5
+        },
+        {
+          "comuna": "Comuna 6",
+          "Variación %": 15.3
+        },
+        {
+          "comuna": "Comuna 7",
+          "Variación %": -2.1
+        },
+        {
+          "comuna": "Comuna 8",
+          "Variación %": 9.1
+        },
+        {
+          "comuna": "Comuna 9",
+          "Variación %": 4.5
+        },
+        {
+          "comuna": "Comuna 10",
+          "Variación %": 4.2
+        },
+        {
+          "comuna": "Comuna 11",
+          "Variación %": 7.8
+        },
+        {
+          "comuna": "Comuna 12",
+          "Variación %": 18.4
+        },
+        {
+          "comuna": "Comuna 13",
+          "Variación %": 14.3
+        },
+        {
+          "comuna": "Comuna 14",
+          "Variación %": 10
+        },
+        {
+          "comuna": "Comuna 15",
+          "Variación %": 7.8
+        }
+      ]
+    },
+    {
+      "sectionId": "densidad-poblacional",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Densidad"
+      },
+      "id": "bar-densidad-comuna",
+      "type": "bar",
+      "title": "Densidad poblacional por comuna (hab./km²)",
+      "sectionTitle": "Densidad Poblacional",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Densidad": 12489.1
+        },
+        {
+          "comuna": "Comuna 2",
+          "Densidad": 25657.9
+        },
+        {
+          "comuna": "Comuna 3",
+          "Densidad": 30662.5
+        },
+        {
+          "comuna": "Comuna 4",
+          "Densidad": 10098.7
+        },
+        {
+          "comuna": "Comuna 5",
+          "Densidad": 28995.7
+        },
+        {
+          "comuna": "Comuna 6",
+          "Densidad": 29426.5
+        },
+        {
+          "comuna": "Comuna 7",
+          "Densidad": 17411
+        },
+        {
+          "comuna": "Comuna 8",
+          "Densidad": 9083
+        },
+        {
+          "comuna": "Comuna 9",
+          "Densidad": 10184.5
+        },
+        {
+          "comuna": "Comuna 10",
+          "Densidad": 13730.5
+        },
+        {
+          "comuna": "Comuna 11",
+          "Densidad": 14510.7
+        },
+        {
+          "comuna": "Comuna 12",
+          "Densidad": 15088.3
+        },
+        {
+          "comuna": "Comuna 13",
+          "Densidad": 17625.7
+        },
+        {
+          "comuna": "Comuna 14",
+          "Densidad": 15637.4
+        },
+        {
+          "comuna": "Comuna 15",
+          "Densidad": 13767.6
+        }
+      ]
+    },
+    {
+      "sectionId": "piramide-poblacional",
+      "config": {
+        "xAxis": "grupo",
+        "layout": "horizontal"
+      },
+      "id": "piramide-poblacional",
+      "type": "pyramid",
+      "title": "Pirámide poblacional — CABA",
+      "sectionTitle": "Pirámide Poblacional",
+      "data": [
+        {
+          "grupo": "0-4",
+          "Mujeres": -60975,
+          "Varones": 63045
+        },
+        {
+          "grupo": "5-9",
+          "Mujeres": -81654,
+          "Varones": 83958
+        },
+        {
+          "grupo": "10-14",
+          "Mujeres": -84134,
+          "Varones": 86930
+        },
+        {
+          "grupo": "15-19",
+          "Mujeres": -92295,
+          "Varones": 91275
+        },
+        {
+          "grupo": "20-24",
+          "Mujeres": -111241,
+          "Varones": 102599
+        },
+        {
+          "grupo": "25-29",
+          "Mujeres": -121635,
+          "Varones": 111374
+        },
+        {
+          "grupo": "30-34",
+          "Mujeres": -130945,
+          "Varones": 121652
+        },
+        {
+          "grupo": "35-39",
+          "Mujeres": -125310,
+          "Varones": 117838
+        },
+        {
+          "grupo": "40-44",
+          "Mujeres": -123034,
+          "Varones": 111783
+        },
+        {
+          "grupo": "45-49",
+          "Mujeres": -117247,
+          "Varones": 101652
+        },
+        {
+          "grupo": "50-54",
+          "Mujeres": -103000,
+          "Varones": 87005
+        },
+        {
+          "grupo": "55-59",
+          "Mujeres": -95281,
+          "Varones": 77532
+        },
+        {
+          "grupo": "60-64",
+          "Mujeres": -92028,
+          "Varones": 72872
+        },
+        {
+          "grupo": "65-69",
+          "Mujeres": -86313,
+          "Varones": 62979
+        },
+        {
+          "grupo": "70-74",
+          "Mujeres": -79465,
+          "Varones": 54008
+        },
+        {
+          "grupo": "75-79",
+          "Mujeres": -68473,
+          "Varones": 41920
+        },
+        {
+          "grupo": "80-84",
+          "Mujeres": -49459,
+          "Varones": 26401
+        },
+        {
+          "grupo": "85-89",
+          "Mujeres": -33049,
+          "Varones": 14845
+        },
+        {
+          "grupo": "90-94",
+          "Mujeres": -19145,
+          "Varones": 6608
+        },
+        {
+          "grupo": "95-99",
+          "Mujeres": -5839,
+          "Varones": 1580
+        },
+        {
+          "grupo": "100 y más",
+          "Mujeres": -785,
+          "Varones": 141
+        }
+      ]
+    },
+    {
+      "sectionId": "edad-mediana-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Edad mediana"
+      },
+      "id": "bar-edad-mediana",
+      "type": "bar",
+      "title": "Edad mediana por comuna",
+      "sectionTitle": "Edad Mediana por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Edad mediana": 35
+        },
+        {
+          "comuna": "Comuna 2",
+          "Edad mediana": 38
+        },
+        {
+          "comuna": "Comuna 3",
+          "Edad mediana": 38
+        },
+        {
+          "comuna": "Comuna 4",
+          "Edad mediana": 35
+        },
+        {
+          "comuna": "Comuna 5",
+          "Edad mediana": 40
+        },
+        {
+          "comuna": "Comuna 6",
+          "Edad mediana": 41
+        },
+        {
+          "comuna": "Comuna 7",
+          "Edad mediana": 40
+        },
+        {
+          "comuna": "Comuna 8",
+          "Edad mediana": 32
+        },
+        {
+          "comuna": "Comuna 9",
+          "Edad mediana": 39
+        },
+        {
+          "comuna": "Comuna 10",
+          "Edad mediana": 41
+        },
+        {
+          "comuna": "Comuna 11",
+          "Edad mediana": 42
+        },
+        {
+          "comuna": "Comuna 12",
+          "Edad mediana": 40
+        },
+        {
+          "comuna": "Comuna 13",
+          "Edad mediana": 41
+        },
+        {
+          "comuna": "Comuna 14",
+          "Edad mediana": 39
+        },
+        {
+          "comuna": "Comuna 15",
+          "Edad mediana": 39
+        }
+      ]
+    },
+    {
+      "sectionId": "tipo-de-residencia",
+      "config": {},
+      "id": "pie-tipo-residencia",
+      "type": "pie",
+      "title": "Tipo de residencia — CABA",
+      "sectionTitle": "Tipo de Residencia",
+      "data": [
+        {
+          "id": "Vivienda particular",
+          "label": "Vivienda particular",
+          "value": 3095454
+        },
+        {
+          "id": "Vivienda colectiva",
+          "label": "Vivienda colectiva",
+          "value": 23850
+        },
+        {
+          "id": "Situación de calle",
+          "label": "Situación de calle",
+          "value": 2403
+        }
+      ]
+    },
+    {
+      "sectionId": "indice-de-feminidad-por-edad",
+      "config": {
+        "xAxis": "edad",
+        "yAxis": "Mujeres por cada 100 varones"
+      },
+      "id": "line-feminidad",
+      "type": "line",
+      "title": "Índice de feminidad por grupo de edad — CABA",
+      "sectionTitle": "Índice de Feminidad por Edad",
+      "data": [
+        {
+          "edad": "0-4",
+          "Índice feminidad": 97
+        },
+        {
+          "edad": "5-9",
+          "Índice feminidad": 97
+        },
+        {
+          "edad": "10-14",
+          "Índice feminidad": 97
+        },
+        {
+          "edad": "15-19",
+          "Índice feminidad": 101
+        },
+        {
+          "edad": "20-24",
+          "Índice feminidad": 108
+        },
+        {
+          "edad": "25-29",
+          "Índice feminidad": 109
+        },
+        {
+          "edad": "30-34",
+          "Índice feminidad": 108
+        },
+        {
+          "edad": "35-39",
+          "Índice feminidad": 106
+        },
+        {
+          "edad": "40-44",
+          "Índice feminidad": 110
+        },
+        {
+          "edad": "45-49",
+          "Índice feminidad": 115
+        },
+        {
+          "edad": "50-54",
+          "Índice feminidad": 118
+        },
+        {
+          "edad": "55-59",
+          "Índice feminidad": 123
+        },
+        {
+          "edad": "60-64",
+          "Índice feminidad": 126
+        },
+        {
+          "edad": "65-69",
+          "Índice feminidad": 137
+        },
+        {
+          "edad": "70-74",
+          "Índice feminidad": 147
+        },
+        {
+          "edad": "75-79",
+          "Índice feminidad": 163
+        },
+        {
+          "edad": "80-84",
+          "Índice feminidad": 187
+        },
+        {
+          "edad": "85-89",
+          "Índice feminidad": 223
+        },
+        {
+          "edad": "90-94",
+          "Índice feminidad": 290
+        },
+        {
+          "edad": "95-99",
+          "Índice feminidad": 370
+        },
+        {
+          "edad": "100 y más",
+          "Índice feminidad": 557
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "sectionId": "poblacion-por-comuna",
+      "id": "rank-pob",
+      "title": "Comunas más pobladas",
+      "items": [
+        {
+          "name": "Comuna 13",
+          "value": 264385,
+          "municipioId": "13"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 248635,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 236887,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 229240,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 223554,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 215896,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 204601,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 8",
+          "value": 204367,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 203043,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 196876,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 196240,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 194271,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 173004,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 169063,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 161645,
+          "municipioId": "02"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "sectionId": "crecimiento-decenal",
+      "id": "rank-var",
+      "title": "Comunas con mayor crecimiento",
+      "items": [
+        {
+          "name": "Comuna 12",
+          "value": 18.4,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 15.3,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 14.3,
+          "municipioId": "13"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 10,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 8",
+          "value": 9.1,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 8.6,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 8.5,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 7.8,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 7.8,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 5,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 4.6,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 4.5,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 4.2,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 2.4,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 7",
+          "value": -2.1,
+          "municipioId": "07"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "sectionId": "densidad-poblacional",
+      "id": "rank-densidad",
+      "title": "Comunas con mayor densidad",
+      "items": [
+        {
+          "name": "Comuna 3",
+          "value": 30662.5,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 29426.5,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 28995.7,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 25657.9,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 17625.7,
+          "municipioId": "13"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 17411,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 15637.4,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 15088.3,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 14510.7,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 13767.6,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 13730.5,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 12489.1,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 10184.5,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 10098.7,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 8",
+          "value": 9083,
+          "municipioId": "08"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "sectionId": "edad-mediana-por-comuna",
+      "id": "rank-mediana",
+      "title": "Comunas con población más envejecida",
+      "items": [
+        {
+          "name": "Comuna 11",
+          "value": 42,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 41,
+          "municipioId": "06"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 41,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 41,
+          "municipioId": "13"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 40,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 40,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 40,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 39,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 39,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 39,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 38,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 38,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 1",
+          "value": 35,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 35,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 8",
+          "value": 32,
+          "municipioId": "08"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "01",
+      "municipioNombre": "Comuna 1",
+      "value": 223554,
+      "label": "223.554 hab."
+    },
+    {
+      "municipioId": "02",
+      "municipioNombre": "Comuna 2",
+      "value": 161645,
+      "label": "161.645 hab."
+    },
+    {
+      "municipioId": "03",
+      "municipioNombre": "Comuna 3",
+      "value": 196240,
+      "label": "196.240 hab."
+    },
+    {
+      "municipioId": "04",
+      "municipioNombre": "Comuna 4",
+      "value": 229240,
+      "label": "229.240 hab."
+    },
+    {
+      "municipioId": "05",
+      "municipioNombre": "Comuna 5",
+      "value": 194271,
+      "label": "194.271 hab."
+    },
+    {
+      "municipioId": "06",
+      "municipioNombre": "Comuna 6",
+      "value": 203043,
+      "label": "203.043 hab."
+    },
+    {
+      "municipioId": "07",
+      "municipioNombre": "Comuna 7",
+      "value": 215896,
+      "label": "215.896 hab."
+    },
+    {
+      "municipioId": "08",
+      "municipioNombre": "Comuna 8",
+      "value": 204367,
+      "label": "204.367 hab."
+    },
+    {
+      "municipioId": "09",
+      "municipioNombre": "Comuna 9",
+      "value": 169063,
+      "label": "169.063 hab."
+    },
+    {
+      "municipioId": "10",
+      "municipioNombre": "Comuna 10",
+      "value": 173004,
+      "label": "173.004 hab."
+    },
+    {
+      "municipioId": "11",
+      "municipioNombre": "Comuna 11",
+      "value": 204601,
+      "label": "204.601 hab."
+    },
+    {
+      "municipioId": "12",
+      "municipioNombre": "Comuna 12",
+      "value": 236887,
+      "label": "236.887 hab."
+    },
+    {
+      "municipioId": "13",
+      "municipioNombre": "Comuna 13",
+      "value": 264385,
+      "label": "264.385 hab."
+    },
+    {
+      "municipioId": "14",
+      "municipioNombre": "Comuna 14",
+      "value": 248635,
+      "label": "248.635 hab."
+    },
+    {
+      "municipioId": "15",
+      "municipioNombre": "Comuna 15",
+      "value": 196876,
+      "label": "196.876 hab."
+    }
+  ]
+}

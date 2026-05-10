@@ -1,0 +1,38 @@
+# Excluye archivos del bundle subido a Vercel.
+# Vercel también respeta .gitignore por defecto, pero acá explicitamos
+# lo que NO queremos enviar (datos brutos pesados, scripts, etc.).
+
+# Datos brutos del Censo (~30MB de XLSX) — no se necesitan en runtime.
+# El pipeline `npm run build-data` (prebuild) detecta su ausencia y usa los
+# JSON/MD ya pre-generados en public/.
+1- Poblacion/
+
+# scripts/ NO se ignora: el `prebuild` corre `node scripts/build-data.cjs`
+# desde el bundle de Vercel y necesita los .cjs presentes.
+
+# Outputs locales / IDE / dev
+node_modules/
+dist/
+.discovery.json
+scripts/.discovery.json
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# AI assistant configs
+.gemini/
+.claude/
+.vercel/
+
+# Env locales (Vercel inyecta las suyas)
+.env
+.env.local
+.env.*.local
+
+# Plan / task scratchpads
+implementation_plan.md
+task.md
+
+# Logs
+*.log
