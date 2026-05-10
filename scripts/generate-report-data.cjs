@@ -17,21 +17,26 @@ const path = require("path");
 const { ReportBuilder, slugify } = require("./lib/report-builder.cjs");
 const { buildReportMd } = require("./lib/markdown-builder.cjs");
 const { readSheetRows, extractCabaTable } = require("./lib/xlsx-utils.cjs");
+const { readCsv } = require("./lib/csv-utils.cjs");
 const { COMUNAS_CABA } = require("./lib/geo-comunas.cjs");
 const {
   toNumber, formatInteger, formatDecimal, formatPercent, formatCompact,
 } = require("./lib/formatters.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
-const DATA_DIR = path.join(ROOT, "public", "data", "poblacion");
-const REPORTS_DIR = path.join(ROOT, "public", "reports", "poblacion");
+const PUBLIC_DATA = path.join(ROOT, "public", "data");
+const PUBLIC_REPORTS = path.join(ROOT, "public", "reports");
+const DATA_DIR = path.join(PUBLIC_DATA, "poblacion");
+const REPORTS_DIR = path.join(PUBLIC_REPORTS, "poblacion");
 const RAW_DIR = path.join(ROOT, "1- Poblacion");
+const SEC_DIR = path.join(ROOT, "2- Seguridad");
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 fs.mkdirSync(REPORTS_DIR, { recursive: true });
 
 const SOURCE = "Censo Nacional de Población, Hogares y Viviendas 2022 (INDEC)";
 const PERIOD = "2022";
+const SOURCE_SNIC = "SNIC — Sistema Nacional de Información Criminal (Ministerio de Seguridad de la Nación)";
 
 // Para que findChartsForSection (ReportView.tsx) matchee, todos los charts/rankings
 // usan sectionId = slugify(sectionTitle), y el markdown produce `## sectionTitle`.
@@ -1763,11 +1768,265 @@ function generateFecundidad() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// 9. Seguridad — SNIC (Sistema Nacional de Información Criminal)
+// ═══════════════════════════════════════════════════════════════
+function generateSeguridad() {
+  const slug = "seguridad";
+  const fileDept = path.join(SEC_DIR, "snic-caba-departamental.csv");
+  const fileProv = path.join(SEC_DIR, "snic-provincial.csv");
+
+  if (!fs.existsSync(fileDept)) {
+    console.log(`  ⏭️  Seguridad: ${path.relative(ROOT, fileDept)} no existe. Skip.`);
+    return;
+  }
+
+  const rowsDept = readCsv(fileDept);     // CABA por comuna
+  const rowsProv = readCsv(fileProv);     // Argentina por provincia
+
+  // Año más reciente disponible
+  const yearsAvail = [...new Set(rowsDept.map(r => parseInt(r.anio, 10)).filter(n => Number.isFinite(n)))].sort((a, b) => b - a);
+  const latest = yearsAvail[0];
+  const prev = yearsAvail[1];
+
+  // Subset año actual y previo, solo CABA por comuna (excluyendo "Departamento sin determinar")
+  const isComuna = (name) => /^Comuna\s+\d+$/i.test(String(name || "").trim());
+  const dCurrent = rowsDept.filter(r => +r.anio === latest && isComuna(r.departamento_nombre));
+  const dPrev    = rowsDept.filter(r => +r.anio === prev    && isComuna(r.departamento_nombre));
+
+  // Categorías clave para KPI/charts (los nombres deben coincidir EXACTAMENTE con el CSV)
+  const KEY = {
+    homDol:   "Homicidios dolosos",
+    robos:    "Robos (excluye los agravados por el resultado de lesiones y/o muertes)",
+    hurtos:   "Hurtos",
+    lesiones: "Lesiones dolosas",
+    muertesViales: "Muertes en accidentes viales",
+    suicidios: "Suicidios (consumados)",
+    abusosCarnal: "Abusos sexuales con acceso carnal (violaciones)",
+    estafas:  "Estafas y defraudaciones (no incluye virtuales) y usura",
+    estafasVirt: "Estafas y defraudaciones asistidas virtualmente",
+    estupef:  "Ley 23.737 (estupefacientes)",
+    amenazas: "Amenazas",
+    robosAgr: "Robos agravados por el resultado de lesiones y/o muertes",
+  };
+
+  // Sumar `cantidad_hechos` para una categoría en un set de filas
+  const sumHechos = (rows, categoria) => rows
+    .filter(r => r.codigo_delito_snic_nombre === categoria)
+    .reduce((s, r) => s + (parseInt(r.cantidad_hechos, 10) || 0), 0);
+
+  const sumVictimas = (rows, categoria) => rows
+    .filter(r => r.codigo_delito_snic_nombre === categoria)
+    .reduce((s, r) => s + (parseInt(r.cantidad_victimas, 10) || 0), 0);
+
+  // Totales CABA año actual
+  const homDol = sumHechos(dCurrent, KEY.homDol);
+  const homDolPrev = sumHechos(dPrev, KEY.homDol);
+  const robos = sumHechos(dCurrent, KEY.robos);
+  const robosAgr = sumHechos(dCurrent, KEY.robosAgr);
+  const hurtos = sumHechos(dCurrent, KEY.hurtos);
+  const lesiones = sumHechos(dCurrent, KEY.lesiones);
+  const muertesViales = sumHechos(dCurrent, KEY.muertesViales);
+  const suicidios = sumHechos(dCurrent, KEY.suicidios);
+  const totalHechos = dCurrent.reduce((s, r) => s + (parseInt(r.cantidad_hechos, 10) || 0), 0);
+  const variacionHomDol = homDolPrev ? ((homDol - homDolPrev) / homDolPrev) * 100 : 0;
+
+  const builder = new ReportBuilder("seguridad")
+    .setMeta({
+      title: "Seguridad y Estadísticas Criminales",
+      category: "Seguridad",
+      subcategory: "Estadísticas Criminales",
+      source: SOURCE_SNIC,
+      date: String(latest),
+    })
+    .addKPI({ id: "homicidios-dolosos", label: "Homicidios dolosos", value: homDol, formatted: formatInteger(homDol), unit: "casos", comparison: prev ? `${variacionHomDol >= 0 ? "+" : ""}${formatDecimal(variacionHomDol, 1)}% vs ${prev}` : undefined, status: homDol > 100 ? "warning" : undefined })
+    .addKPI({ id: "robos", label: "Robos", value: robos + robosAgr, formatted: formatCompact(robos + robosAgr), unit: "casos", comparison: "incluye agravados" })
+    .addKPI({ id: "hurtos", label: "Hurtos", value: hurtos, formatted: formatCompact(hurtos), unit: "casos" })
+    .addKPI({ id: "lesiones-dolosas", label: "Lesiones dolosas", value: lesiones, formatted: formatCompact(lesiones), unit: "casos" })
+    .addKPI({ id: "muertes-viales", label: "Muertes en accidentes viales", value: muertesViales, formatted: formatInteger(muertesViales), unit: "casos" })
+    .addKPI({ id: "suicidios", label: "Suicidios", value: suicidios, formatted: formatInteger(suicidios), unit: "casos" })
+    .addKPI({ id: "total-hechos", label: "Total de hechos delictivos registrados", value: totalHechos, formatted: formatCompact(totalHechos) });
+
+  // Chart: top categorías de delito en CABA (último año)
+  const sectionTop = "Principales Tipos de Delito";
+  const sidTop = slugify(sectionTop);
+  const topCategorias = [
+    { label: "Hurtos",                          v: hurtos },
+    { label: "Robos",                           v: robos },
+    { label: "Robos agravados",                 v: robosAgr },
+    { label: "Lesiones dolosas",                v: lesiones },
+    { label: "Amenazas",                        v: sumHechos(dCurrent, KEY.amenazas) },
+    { label: "Estupefacientes (Ley 23.737)",    v: sumHechos(dCurrent, KEY.estupef) },
+    { label: "Estafas",                         v: sumHechos(dCurrent, KEY.estafas) + sumHechos(dCurrent, KEY.estafasVirt) },
+    { label: "Abusos sexuales (con acceso carnal)", v: sumHechos(dCurrent, KEY.abusosCarnal) },
+    { label: "Muertes viales",                  v: muertesViales },
+    { label: "Homicidios dolosos",              v: homDol },
+  ].filter(d => d.v > 0).sort((a, b) => b.v - a.v);
+  builder.addChart({
+    id: "bar-top-delitos",
+    type: "bar",
+    title: `Principales tipos de delito — CABA, ${latest}`,
+    sectionId: sidTop,
+    sectionTitle: sectionTop,
+    data: topCategorias.map(d => ({ delito: d.label, Hechos: d.v })),
+    config: { xAxis: "delito", yAxis: "Hechos", layout: "horizontal" },
+  });
+
+  // Chart: serie temporal — homicidios, robos, hurtos por año
+  const sectionSerie = "Evolución Temporal";
+  const sidSerie = slugify(sectionSerie);
+  const yearsSeries = [...new Set(rowsDept.map(r => parseInt(r.anio, 10)).filter(n => Number.isFinite(n) && n >= 2017 && n <= latest))].sort();
+  const sumByYear = (categoria) => yearsSeries.map(y => {
+    const sum = rowsDept
+      .filter(r => +r.anio === y && isComuna(r.departamento_nombre) && r.codigo_delito_snic_nombre === categoria)
+      .reduce((s, r) => s + (parseInt(r.cantidad_hechos, 10) || 0), 0);
+    return { anio: String(y), valor: sum };
+  });
+  const serieData = yearsSeries.map(y => {
+    const filt = rowsDept.filter(r => +r.anio === y && isComuna(r.departamento_nombre));
+    const hd = filt.filter(r => r.codigo_delito_snic_nombre === KEY.homDol).reduce((s, r) => s + (parseInt(r.cantidad_hechos, 10) || 0), 0);
+    const hu = filt.filter(r => r.codigo_delito_snic_nombre === KEY.hurtos).reduce((s, r) => s + (parseInt(r.cantidad_hechos, 10) || 0), 0);
+    const ro = filt.filter(r => r.codigo_delito_snic_nombre === KEY.robos).reduce((s, r) => s + (parseInt(r.cantidad_hechos, 10) || 0), 0);
+    return { anio: String(y), "Homicidios dolosos": hd, "Hurtos": hu, "Robos": ro };
+  });
+  builder.addChart({
+    id: "line-serie-temporal",
+    type: "line",
+    title: `Evolución 2017-${latest} de delitos clave — CABA`,
+    sectionId: sidSerie,
+    sectionTitle: sectionSerie,
+    data: serieData,
+    config: { xAxis: "anio", yAxis: "Hechos" },
+  });
+
+  // Chart: tasa de hechos por comuna (último año, todas las categorías sumadas)
+  const sectionComuna = "Hechos Delictivos por Comuna";
+  const sidComuna = slugify(sectionComuna);
+  // Agrupar por comuna sumando todos los delitos, y tasa promedio de las filas con tasa > 0
+  const byComuna = new Map();
+  for (const r of dCurrent) {
+    const nm = String(r.departamento_nombre || "").trim();
+    if (!isComuna(nm)) continue;
+    const slot = byComuna.get(nm) || { hechos: 0, tasaSum: 0, tasaCount: 0 };
+    slot.hechos += parseInt(r.cantidad_hechos, 10) || 0;
+    const t = parseFloat(r.tasa_hechos);
+    if (Number.isFinite(t) && t > 0) { slot.tasaSum += t; slot.tasaCount++; }
+    byComuna.set(nm, slot);
+  }
+
+  const dataComuna = COMUNAS_CABA.map(c => {
+    const slot = byComuna.get(c.nombre) || { hechos: 0, tasaSum: 0, tasaCount: 0 };
+    return {
+      comuna: c.nombre,
+      municipioId: c.id,
+      hechos: slot.hechos,
+      tasa: slot.tasaCount ? Math.round((slot.tasaSum / slot.tasaCount) * 10) / 10 : 0,
+    };
+  });
+
+  builder.addChart({
+    id: "bar-hechos-comuna",
+    type: "bar",
+    title: `Hechos delictivos totales por comuna — ${latest}`,
+    sectionId: sidComuna,
+    sectionTitle: sectionComuna,
+    data: dataComuna.map(d => ({ comuna: d.comuna, Hechos: d.hechos })),
+    config: { xAxis: "comuna", yAxis: "Hechos" },
+  });
+
+  // Ranking por hechos absolutos por comuna
+  builder.addRanking({
+    id: "rank-hechos-comuna",
+    title: "Comunas con más hechos delictivos",
+    sectionId: sidComuna,
+    items: [...dataComuna].sort((a, b) => b.hechos - a.hechos).map(d => ({
+      name: d.comuna,
+      value: d.hechos,
+      municipioId: d.municipioId,
+    })),
+    order: "desc",
+  });
+
+  // Chart: víctimas por sexo (acumulado año actual, top 4 categorías violentas)
+  const sectionVic = "Víctimas por Sexo";
+  const sidVic = slugify(sectionVic);
+  const violentas = [KEY.homDol, KEY.robos, KEY.lesiones, KEY.abusosCarnal];
+  const vicData = violentas.map(cat => {
+    const filt = dCurrent.filter(r => r.codigo_delito_snic_nombre === cat);
+    const masc = filt.reduce((s, r) => s + (parseInt(r.cantidad_victimas_masc, 10) || 0), 0);
+    const fem = filt.reduce((s, r) => s + (parseInt(r.cantidad_victimas_fem, 10) || 0), 0);
+    return { delito: cat.length > 30 ? cat.slice(0, 28) + "…" : cat, Mujeres: fem, Varones: masc };
+  });
+  builder.addChart({
+    id: "bar-victimas-sexo",
+    type: "bar",
+    title: "Víctimas por sexo según delito (categorías violentas)",
+    sectionId: sidVic,
+    sectionTitle: sectionVic,
+    data: vicData,
+    config: { xAxis: "delito", yAxis: "Víctimas", grouped: true },
+  });
+
+  // Comparativo provincial: tasa de homicidios por jurisdicción (top 12)
+  const sectionProv = "Comparativo Nacional";
+  const sidProv = slugify(sectionProv);
+  const provYear = rowsProv.filter(r => +r.anio === latest && r.codigo_delito_snic_nombre === KEY.homDol);
+  const provData = provYear
+    .map(r => ({
+      provincia: String(r.provincia_nombre || ""),
+      "Tasa homicidios": parseFloat(r.tasa_hechos) || 0,
+    }))
+    .filter(d => d.provincia && d["Tasa homicidios"] >= 0)
+    .sort((a, b) => b["Tasa homicidios"] - a["Tasa homicidios"])
+    .slice(0, 15);
+  builder.addChart({
+    id: "bar-homicidios-provincias",
+    type: "bar",
+    title: `Tasa de homicidios dolosos por provincia — ${latest}`,
+    sectionId: sidProv,
+    sectionTitle: sectionProv,
+    data: provData,
+    config: { xAxis: "provincia", yAxis: "Tasa (cada 100.000 hab.)", layout: "horizontal" },
+  });
+
+  // mapData: hechos por comuna
+  for (const d of dataComuna) {
+    builder.addMapItem({
+      municipioId: d.municipioId,
+      municipioNombre: d.comuna,
+      value: d.hechos,
+      label: `${formatInteger(d.hechos)} hechos`,
+    });
+  }
+
+  const data = builder.build();
+
+  // CABA homicidios → posición en ranking provincial
+  const cabaHomEntry = provData.find(d => /Ciudad Aut/i.test(d.provincia));
+  const posCABA = cabaHomEntry ? provData.indexOf(cabaHomEntry) + 1 : null;
+
+  const md = buildReportMd({
+    ...data,
+    intro: `En **${latest}**, CABA registró **${formatInteger(homDol)} homicidios dolosos** (${variacionHomDol >= 0 ? "↑" : "↓"} ${formatDecimal(Math.abs(variacionHomDol), 1)}% vs ${prev}), **${formatInteger(robos + robosAgr)} robos** y **${formatInteger(hurtos)} hurtos**. La tasa de homicidios la ubica${posCABA ? ` en el puesto ${posCABA} de 24 jurisdicciones del país` : ""}, evidenciando un perfil delictivo dominado por delitos contra la propiedad antes que por violencia letal.`,
+    sectionNarratives: {
+      [sidTop]: `La estructura del delito en CABA muestra el predominio absoluto de hurtos y robos, característico de grandes centros urbanos. Las categorías violentas (homicidios dolosos, lesiones graves) son comparativamente bajas en términos absolutos pero representan el mayor impacto social.`,
+      [sidSerie]: `La evolución 2017-${latest} permite identificar tendencias estructurales. La pandemia de 2020 marcó un quiebre con caídas históricas en hurtos y robos por la reducción de la circulación, seguido de una recomposición gradual.`,
+      [sidComuna]: `La distribución territorial del delito refleja patrones de concentración urbana, flujo de trabajadores, comercios y nodos de transporte. Las comunas céntricas suelen liderar los rankings absolutos por concentración de actividad económica.`,
+      [sidVic]: `La distribución por sexo de las víctimas varía según el delito: en homicidios dolosos las víctimas son predominantemente varones, mientras que los abusos sexuales con acceso carnal afectan en su gran mayoría a mujeres. Estos patrones son consistentes con la literatura criminológica internacional.`,
+      [sidProv]: `Comparada con el resto del país, CABA presenta una tasa de homicidios dolosos por debajo del promedio nacional, ubicándose habitualmente entre las jurisdicciones más seguras del país en este indicador, contrastando con su mayor incidencia de delitos contra la propiedad.`,
+    },
+  });
+
+  fs.writeFileSync(path.join(PUBLIC_DATA, "seguridad.json"), JSON.stringify(data, null, 2));
+  fs.writeFileSync(path.join(PUBLIC_REPORTS, "seguridad.md"), md);
+  console.log(`  ✅ seguridad.json (${data.kpis.length} KPIs, ${data.charts.length} charts, ${data.rankings.length} rankings, ${data.mapData.length} map items) — año ${latest}`);
+}
+
+// ═══════════════════════════════════════════════════════════════
 // Main
 // ═══════════════════════════════════════════════════════════════
 function main() {
   console.log("\n╔══════════════════════════════════════════════════════════╗");
-  console.log("║   CABA — Census Report Data Generator                  ║");
+  console.log("║   CABA — Census + Security Report Data Generator       ║");
   console.log("╚══════════════════════════════════════════════════════════╝\n");
 
   const generators = [
@@ -1779,6 +2038,7 @@ function main() {
     generateEducacionCensal,
     generateEconomia,
     generateFecundidad,
+    generateSeguridad,
   ];
 
   let failed = 0;

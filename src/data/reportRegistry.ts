@@ -110,6 +110,21 @@ export const REPORTS: ReportEntry[] = [
     dataPath: '/data/poblacion/fecundidad.json',
     order: 8,
   },
+
+  // ─── Grupo 2: Sectoriales ───
+  {
+    id: 'seguridad',
+    slug: 'seguridad',
+    title: 'Seguridad y Estadísticas Criminales',
+    shortTitle: 'Seguridad',
+    category: 'Seguridad',
+    subcategory: 'Estadísticas Criminales',
+    icon: '🛡️',
+    color: '#dc2626',
+    mdPath: '/reports/seguridad.md',
+    dataPath: '/data/seguridad.json',
+    order: 9,
+  },
 ];
 
 export function getReportBySlug(slug: string): ReportEntry | undefined {

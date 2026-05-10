@@ -6,6 +6,7 @@
 # El pipeline `npm run build-data` (prebuild) detecta su ausencia y usa los
 # JSON/MD ya pre-generados en public/.
 1- Poblacion/
+2- Seguridad/
 
 # scripts/ NO se ignora: el `prebuild` corre `node scripts/build-data.cjs`
 # desde el bundle de Vercel y necesita los .cjs presentes.

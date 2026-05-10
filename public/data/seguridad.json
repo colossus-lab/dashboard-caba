@@ -1,0 +1,533 @@
+{
+  "meta": {
+    "id": "seguridad",
+    "title": "Seguridad y Estadísticas Criminales",
+    "category": "Seguridad",
+    "subcategory": "Estadísticas Criminales",
+    "source": "SNIC — Sistema Nacional de Información Criminal (Ministerio de Seguridad de la Nación)",
+    "date": "2024"
+  },
+  "kpis": [
+    {
+      "id": "homicidios-dolosos",
+      "label": "Homicidios dolosos",
+      "value": 75,
+      "formatted": "75",
+      "unit": "casos",
+      "comparison": "-15,7% vs 2023"
+    },
+    {
+      "id": "robos",
+      "label": "Robos",
+      "value": 68304,
+      "formatted": "68,3K",
+      "unit": "casos",
+      "comparison": "incluye agravados"
+    },
+    {
+      "id": "hurtos",
+      "label": "Hurtos",
+      "value": 62655,
+      "formatted": "62,7K",
+      "unit": "casos"
+    },
+    {
+      "id": "lesiones-dolosas",
+      "label": "Lesiones dolosas",
+      "value": 8449,
+      "formatted": "8,4K",
+      "unit": "casos"
+    },
+    {
+      "id": "muertes-viales",
+      "label": "Muertes en accidentes viales",
+      "value": 109,
+      "formatted": "109",
+      "unit": "casos"
+    },
+    {
+      "id": "suicidios",
+      "label": "Suicidios",
+      "value": 171,
+      "formatted": "171",
+      "unit": "casos"
+    },
+    {
+      "id": "total-hechos",
+      "label": "Total de hechos delictivos registrados",
+      "value": 215085,
+      "formatted": "215,1K"
+    }
+  ],
+  "charts": [
+    {
+      "sectionId": "principales-tipos-de-delito",
+      "config": {
+        "xAxis": "delito",
+        "yAxis": "Hechos",
+        "layout": "horizontal"
+      },
+      "id": "bar-top-delitos",
+      "type": "bar",
+      "title": "Principales tipos de delito — CABA, 2024",
+      "sectionTitle": "Principales Tipos de Delito",
+      "data": [
+        {
+          "delito": "Robos",
+          "Hechos": 68079
+        },
+        {
+          "delito": "Hurtos",
+          "Hechos": 62655
+        },
+        {
+          "delito": "Estafas",
+          "Hechos": 27358
+        },
+        {
+          "delito": "Lesiones dolosas",
+          "Hechos": 8449
+        },
+        {
+          "delito": "Amenazas",
+          "Hechos": 6200
+        },
+        {
+          "delito": "Abusos sexuales (con acceso carnal)",
+          "Hechos": 341
+        },
+        {
+          "delito": "Robos agravados",
+          "Hechos": 225
+        },
+        {
+          "delito": "Muertes viales",
+          "Hechos": 109
+        },
+        {
+          "delito": "Homicidios dolosos",
+          "Hechos": 75
+        }
+      ]
+    },
+    {
+      "sectionId": "evolucion-temporal",
+      "config": {
+        "xAxis": "anio",
+        "yAxis": "Hechos"
+      },
+      "id": "line-serie-temporal",
+      "type": "line",
+      "title": "Evolución 2017-2024 de delitos clave — CABA",
+      "sectionTitle": "Evolución Temporal",
+      "data": [
+        {
+          "anio": "2017",
+          "Homicidios dolosos": 135,
+          "Hurtos": 42150,
+          "Robos": 68219
+        },
+        {
+          "anio": "2018",
+          "Homicidios dolosos": 132,
+          "Hurtos": 40993,
+          "Robos": 69210
+        },
+        {
+          "anio": "2019",
+          "Homicidios dolosos": 95,
+          "Hurtos": 48519,
+          "Robos": 61198
+        },
+        {
+          "anio": "2020",
+          "Homicidios dolosos": 120,
+          "Hurtos": 25616,
+          "Robos": 33317
+        },
+        {
+          "anio": "2021",
+          "Homicidios dolosos": 99,
+          "Hurtos": 36159,
+          "Robos": 43183
+        },
+        {
+          "anio": "2022",
+          "Homicidios dolosos": 87,
+          "Hurtos": 54111,
+          "Robos": 54677
+        },
+        {
+          "anio": "2023",
+          "Homicidios dolosos": 89,
+          "Hurtos": 62389,
+          "Robos": 64383
+        },
+        {
+          "anio": "2024",
+          "Homicidios dolosos": 75,
+          "Hurtos": 62655,
+          "Robos": 68079
+        }
+      ]
+    },
+    {
+      "sectionId": "hechos-delictivos-por-comuna",
+      "config": {
+        "xAxis": "comuna",
+        "yAxis": "Hechos"
+      },
+      "id": "bar-hechos-comuna",
+      "type": "bar",
+      "title": "Hechos delictivos totales por comuna — 2024",
+      "sectionTitle": "Hechos Delictivos por Comuna",
+      "data": [
+        {
+          "comuna": "Comuna 1",
+          "Hechos": 29989
+        },
+        {
+          "comuna": "Comuna 2",
+          "Hechos": 10036
+        },
+        {
+          "comuna": "Comuna 3",
+          "Hechos": 16249
+        },
+        {
+          "comuna": "Comuna 4",
+          "Hechos": 20189
+        },
+        {
+          "comuna": "Comuna 5",
+          "Hechos": 10654
+        },
+        {
+          "comuna": "Comuna 6",
+          "Hechos": 9551
+        },
+        {
+          "comuna": "Comuna 7",
+          "Hechos": 16185
+        },
+        {
+          "comuna": "Comuna 8",
+          "Hechos": 13807
+        },
+        {
+          "comuna": "Comuna 9",
+          "Hechos": 11634
+        },
+        {
+          "comuna": "Comuna 10",
+          "Hechos": 9919
+        },
+        {
+          "comuna": "Comuna 11",
+          "Hechos": 10446
+        },
+        {
+          "comuna": "Comuna 12",
+          "Hechos": 11127
+        },
+        {
+          "comuna": "Comuna 13",
+          "Hechos": 13547
+        },
+        {
+          "comuna": "Comuna 14",
+          "Hechos": 18452
+        },
+        {
+          "comuna": "Comuna 15",
+          "Hechos": 13300
+        }
+      ]
+    },
+    {
+      "sectionId": "victimas-por-sexo",
+      "config": {
+        "xAxis": "delito",
+        "yAxis": "Víctimas",
+        "grouped": true
+      },
+      "id": "bar-victimas-sexo",
+      "type": "bar",
+      "title": "Víctimas por sexo según delito (categorías violentas)",
+      "sectionTitle": "Víctimas por Sexo",
+      "data": [
+        {
+          "delito": "Homicidios dolosos",
+          "Mujeres": 12,
+          "Varones": 65
+        },
+        {
+          "delito": "Robos (excluye los agravados…",
+          "Mujeres": 0,
+          "Varones": 0
+        },
+        {
+          "delito": "Lesiones dolosas",
+          "Mujeres": 4578,
+          "Varones": 4654
+        },
+        {
+          "delito": "Abusos sexuales con acceso c…",
+          "Mujeres": 335,
+          "Varones": 38
+        }
+      ]
+    },
+    {
+      "sectionId": "comparativo-nacional",
+      "config": {
+        "xAxis": "provincia",
+        "yAxis": "Tasa (cada 100.000 hab.)",
+        "layout": "horizontal"
+      },
+      "id": "bar-homicidios-provincias",
+      "type": "bar",
+      "title": "Tasa de homicidios dolosos por provincia — 2024",
+      "sectionTitle": "Comparativo Nacional",
+      "data": [
+        {
+          "provincia": "Santa Fe",
+          "Tasa homicidios": 4.6402273
+        },
+        {
+          "provincia": "Chaco",
+          "Tasa homicidios": 4.4800286
+        },
+        {
+          "provincia": "Buenos Aires",
+          "Tasa homicidios": 4.3404565
+        },
+        {
+          "provincia": "Neuquén",
+          "Tasa homicidios": 4.305192
+        },
+        {
+          "provincia": "Salta",
+          "Tasa homicidios": 4.2853851
+        },
+        {
+          "provincia": "Chubut",
+          "Tasa homicidios": 4.2470317
+        },
+        {
+          "provincia": "Río Negro",
+          "Tasa homicidios": 4.2053485
+        },
+        {
+          "provincia": "Tucumán",
+          "Tasa homicidios": 3.553941
+        },
+        {
+          "provincia": "Formosa",
+          "Tasa homicidios": 3.3675163
+        },
+        {
+          "provincia": "Entre Ríos",
+          "Tasa homicidios": 3.3445351
+        },
+        {
+          "provincia": "Mendoza",
+          "Tasa homicidios": 3.3359182
+        },
+        {
+          "provincia": "Santiago del Estero",
+          "Tasa homicidios": 3.2434728
+        },
+        {
+          "provincia": "Misiones",
+          "Tasa homicidios": 3.1946111
+        },
+        {
+          "provincia": "Córdoba",
+          "Tasa homicidios": 2.915982
+        },
+        {
+          "provincia": "San Luis",
+          "Tasa homicidios": 2.8135357
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "sectionId": "hechos-delictivos-por-comuna",
+      "id": "rank-hechos-comuna",
+      "title": "Comunas con más hechos delictivos",
+      "items": [
+        {
+          "name": "Comuna 1",
+          "value": 29989,
+          "municipioId": "01"
+        },
+        {
+          "name": "Comuna 4",
+          "value": 20189,
+          "municipioId": "04"
+        },
+        {
+          "name": "Comuna 14",
+          "value": 18452,
+          "municipioId": "14"
+        },
+        {
+          "name": "Comuna 3",
+          "value": 16249,
+          "municipioId": "03"
+        },
+        {
+          "name": "Comuna 7",
+          "value": 16185,
+          "municipioId": "07"
+        },
+        {
+          "name": "Comuna 8",
+          "value": 13807,
+          "municipioId": "08"
+        },
+        {
+          "name": "Comuna 13",
+          "value": 13547,
+          "municipioId": "13"
+        },
+        {
+          "name": "Comuna 15",
+          "value": 13300,
+          "municipioId": "15"
+        },
+        {
+          "name": "Comuna 9",
+          "value": 11634,
+          "municipioId": "09"
+        },
+        {
+          "name": "Comuna 12",
+          "value": 11127,
+          "municipioId": "12"
+        },
+        {
+          "name": "Comuna 5",
+          "value": 10654,
+          "municipioId": "05"
+        },
+        {
+          "name": "Comuna 11",
+          "value": 10446,
+          "municipioId": "11"
+        },
+        {
+          "name": "Comuna 2",
+          "value": 10036,
+          "municipioId": "02"
+        },
+        {
+          "name": "Comuna 10",
+          "value": 9919,
+          "municipioId": "10"
+        },
+        {
+          "name": "Comuna 6",
+          "value": 9551,
+          "municipioId": "06"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "01",
+      "municipioNombre": "Comuna 1",
+      "value": 29989,
+      "label": "29.989 hechos"
+    },
+    {
+      "municipioId": "02",
+      "municipioNombre": "Comuna 2",
+      "value": 10036,
+      "label": "10.036 hechos"
+    },
+    {
+      "municipioId": "03",
+      "municipioNombre": "Comuna 3",
+      "value": 16249,
+      "label": "16.249 hechos"
+    },
+    {
+      "municipioId": "04",
+      "municipioNombre": "Comuna 4",
+      "value": 20189,
+      "label": "20.189 hechos"
+    },
+    {
+      "municipioId": "05",
+      "municipioNombre": "Comuna 5",
+      "value": 10654,
+      "label": "10.654 hechos"
+    },
+    {
+      "municipioId": "06",
+      "municipioNombre": "Comuna 6",
+      "value": 9551,
+      "label": "9.551 hechos"
+    },
+    {
+      "municipioId": "07",
+      "municipioNombre": "Comuna 7",
+      "value": 16185,
+      "label": "16.185 hechos"
+    },
+    {
+      "municipioId": "08",
+      "municipioNombre": "Comuna 8",
+      "value": 13807,
+      "label": "13.807 hechos"
+    },
+    {
+      "municipioId": "09",
+      "municipioNombre": "Comuna 9",
+      "value": 11634,
+      "label": "11.634 hechos"
+    },
+    {
+      "municipioId": "10",
+      "municipioNombre": "Comuna 10",
+      "value": 9919,
+      "label": "9.919 hechos"
+    },
+    {
+      "municipioId": "11",
+      "municipioNombre": "Comuna 11",
+      "value": 10446,
+      "label": "10.446 hechos"
+    },
+    {
+      "municipioId": "12",
+      "municipioNombre": "Comuna 12",
+      "value": 11127,
+      "label": "11.127 hechos"
+    },
+    {
+      "municipioId": "13",
+      "municipioNombre": "Comuna 13",
+      "value": 13547,
+      "label": "13.547 hechos"
+    },
+    {
+      "municipioId": "14",
+      "municipioNombre": "Comuna 14",
+      "value": 18452,
+      "label": "18.452 hechos"
+    },
+    {
+      "municipioId": "15",
+      "municipioNombre": "Comuna 15",
+      "value": 13300,
+      "label": "13.300 hechos"
+    }
+  ]
+}
