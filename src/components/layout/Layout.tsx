@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { PersistentSidebar, useIsReportRoute } from './PersistentSidebar';
-import { SiteFooter } from './SiteFooter';
 import { useStore } from '../../store/useStore';
 import { REPORTS, getPoblacionReports, getSectorialReports } from '../../data/reportRegistry';
 import { useScrollProgress } from '../../hooks/useIntersectionObserver';
@@ -61,10 +60,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       >
         {children}
       </main>
-
-      <div className={`${mainMaxWidthClass} mx-auto px-4 sm:px-6 lg:px-8 ${mainPaddingClass}`}>
-        <SiteFooter />
-      </div>
     </div>
   );
 }

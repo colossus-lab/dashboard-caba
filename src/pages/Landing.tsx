@@ -1,26 +1,78 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { getPoblacionReports, getSectorialReports } from '../data/reportRegistry';
 import { SectionReveal } from '../components/ui/SectionReveal';
+import { SiteFooter } from '../components/layout/SiteFooter';
 import type { ReportEntry } from '../types/report';
 
 // ─── Macro KPIs for the hero (CABA census data) ───
 const HERO_STATS = [
-  { value: 3120612, label: 'Habitantes', suffix: '' },
-  { value: 15, label: 'Comunas', suffix: '' },
-  { value: 8, label: 'Informes', suffix: '' },
+  { value: 3120612, label: 'Habitantes', suffix: '', tooltip: 'Censo Nacional 2022 · INDEC' },
+  { value: 15, label: 'Comunas', suffix: '', tooltip: 'Ciudad Autónoma de Buenos Aires' },
+  { value: 48, label: 'Barrios', suffix: '', tooltip: '48 barrios distribuidos en 15 comunas' },
+  { value: 9, label: 'Informes', suffix: '', tooltip: '9 informes basados en datos abiertos' },
 ];
 
-// ─── Mini-stats per report (placeholder — will be filled when data is generated) ───
-const MINI_STATS: Record<string, string> = {
-  'poblacion-estructura': '3,1M hab',
-  'poblacion-habitacional-personas': '1,2M hogares',
-  'poblacion-salud-prevision': 'Cobertura salud',
-  'poblacion-habitacional-hogares': 'Hogares',
-  'poblacion-viviendas': 'Viviendas',
-  'poblacion-educacion-censal': 'Asistencia',
-  'poblacion-economia': 'PEA',
-  'poblacion-fecundidad': 'Fecundidad',
+// ─── Stats reales por informe ───
+type StatItem = { value: string; label: string };
+
+const REPORT_STATS: Record<string, StatItem[]> = {
+  'poblacion-estructura': [
+    { value: '3,1M', label: 'habitantes' },
+    { value: '15', label: 'comunas' },
+    { value: '48', label: 'barrios' },
+    { value: '7,8%', label: 'del país' },
+  ],
+  'poblacion-habitacional-personas': [
+    { value: '95%', label: 'piso calidad' },
+    { value: '99%', label: 'agua de red' },
+    { value: '98%', label: 'con cloacas' },
+    { value: '1,2M', label: 'hogares' },
+  ],
+  'poblacion-salud-prevision': [
+    { value: '78%', label: 'obra social' },
+    { value: '22%', label: 'sin cobertura' },
+    { value: '24%', label: 'percibe jub.' },
+    { value: '670K', label: 'sin previsión' },
+  ],
+  'poblacion-habitacional-hogares': [
+    { value: '96%', label: 'piso calidad' },
+    { value: '98%', label: 'con cloaca' },
+    { value: '12%', label: 'cocina garrafa' },
+    { value: '8%', label: '1 habitación' },
+  ],
+  'poblacion-viviendas': [
+    { value: '1,5M', label: 'viviendas' },
+    { value: '83%', label: 'ocupadas' },
+    { value: '6%', label: 'son casas' },
+    { value: '94%', label: 'departamentos' },
+  ],
+  'poblacion-educacion-censal': [
+    { value: '950K', label: 'asistentes' },
+    { value: '58%', label: 'nivel inicial' },
+    { value: '99%', label: 'primario' },
+    { value: '78%', label: 'sec. completo' },
+  ],
+  'poblacion-economia': [
+    { value: '1,6M', label: 'ocupados' },
+    { value: '6,8%', label: 'desocupación' },
+    { value: '68%', label: 'tasa activ.' },
+    { value: '32%', label: 'inactivos' },
+  ],
+  'poblacion-fecundidad': [
+    { value: '1,1', label: 'hijos/mujer' },
+    { value: '52%', label: 'sin hijos' },
+    { value: 'CABA', label: 'min país' },
+    { value: '−18%', label: 'var. 10-22' },
+  ],
+  // Sectoriales
+  'seguridad': [
+    { value: '188K', label: 'hechos' },
+    { value: '60', label: 'homicidios' },
+    { value: '4.060', label: 'robos /100K' },
+    { value: 'SNIC', label: '2024' },
+  ],
 };
 
 export function Landing() {
@@ -29,6 +81,14 @@ export function Landing() {
 
   return (
     <div className="landing-page">
+      <Helmet>
+        <title>Dashboard CABA · Inteligencia Estratégica Distrital</title>
+        <meta
+          name="description"
+          content="Plataforma de datos abiertos con análisis interactivo de la Ciudad Autónoma de Buenos Aires. 3,1M habitantes, 15 comunas, 9 informes."
+        />
+        <link rel="canonical" href="https://caba.openarg.org" />
+      </Helmet>
       {/* ─── Animated Hero ─── */}
       <SectionReveal>
         <header className="landing-hero">
@@ -46,14 +106,22 @@ export function Landing() {
             </div>
             <h1 className="hero-title">
               Inteligencia Estratégica
-              <span className="hero-title-light">de la Ciudad de Buenos Aires</span>
+              <span className="hero-title-light">de la Ciudad Autónoma de Buenos Aires</span>
             </h1>
             <p className="hero-subtitle">
+              Explorá <span className="hero-highlight">3,1M habitantes</span> y{' '}
+              <span className="hero-highlight">15 comunas</span> con 9 informes basados en
+              datos oficiales del INDEC, Censo 2022, SNIC y GCBA.
+            </p>
+            <p className="hero-attribution">
               Powered by{' '}
               <a href="https://colossuslab.org" target="_blank" rel="noopener noreferrer" className="hero-link">
                 ColossusLab.org
               </a>{' '}
-              — Datos Abiertos vía <span className="hero-highlight">OpenArg</span> 🇦🇷
+              · Datos vía{' '}
+              <a href="https://openarg.org" target="_blank" rel="noopener noreferrer" className="hero-link">
+                OpenArg
+              </a>
             </p>
 
             {/* ─── Count-up Stats ─── */}
@@ -61,7 +129,7 @@ export function Landing() {
               {HERO_STATS.map((stat, i) => (
                 <div key={stat.label}>
                   {i > 0 && <span className="hero-stat-divider" />}
-                  <div className="hero-stat">
+                  <div className="hero-stat" title={stat.tooltip}>
                     <CountUp target={stat.value} suffix={stat.suffix} />
                     <span className="hero-stat-label">{stat.label}</span>
                   </div>
@@ -79,7 +147,11 @@ export function Landing() {
             <div className="section-number">01</div>
             <div>
               <h2 className="section-title">Población — Censo 2022</h2>
-              <p className="section-desc">Análisis demográfico integral de la Ciudad Autónoma de Buenos Aires con datos del censo nacional.</p>
+              <p className="section-desc">
+                Ocho dimensiones del último censo nacional: estructura por sexo y edad, hábitat,
+                hogares, stock de viviendas, asistencia educativa, características económicas,
+                salud y previsión, y fecundidad.
+              </p>
             </div>
           </div>
           <div className="report-grid">
@@ -90,7 +162,7 @@ export function Landing() {
         </section>
       </SectionReveal>
 
-      {/* ─── Sectoriales Grid (hidden if empty) ─── */}
+      {/* ─── Sectoriales Grid ─── */}
       {sectoriales.length > 0 && (
         <SectionReveal>
           <section className="landing-section">
@@ -111,18 +183,7 @@ export function Landing() {
       )}
 
       {/* ─── Footer ─── */}
-      <footer className="landing-footer">
-        <div className="footer-rule" />
-        <p>
-          <a href="https://colossuslab.org" target="_blank" rel="noopener noreferrer" className="footer-link">
-            ColossusLab.org
-          </a>{' '}
-          •{' '}
-          <a href="https://openarg.org" target="_blank" rel="noopener noreferrer" className="footer-link">
-            OpenArg.org
-          </a>
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
@@ -130,7 +191,8 @@ export function Landing() {
 // ═══════ Components ═══════
 
 function ReportCard({ report, index }: { report: ReportEntry; index: number }) {
-  const miniStat = MINI_STATS[report.id] || '';
+  const stats = REPORT_STATS[report.id];
+  const tickerSize: 'sm' | 'md' | 'lg' = index === 0 ? 'md' : 'sm';
 
   return (
     <Link
@@ -143,19 +205,42 @@ function ReportCard({ report, index }: { report: ReportEntry; index: number }) {
     >
       <div className="report-card-glow" aria-hidden="true" />
       <div className="report-card-header">
-        <span className="report-card-icon">{report.icon}</span>
+        <span className="report-card-number">{String(report.order).padStart(2, '0')}</span>
         <span className="report-card-arrow">→</span>
       </div>
       <div className="report-card-body">
         <span className="report-card-title">{report.shortTitle}</span>
         <span className="report-card-desc">{report.title}</span>
       </div>
-      {miniStat && (
+      {stats && stats.length > 0 && (
         <div className="report-card-stat">
-          <span className="report-card-stat-value">{miniStat}</span>
+          <StatTicker items={stats} size={tickerSize} />
         </div>
       )}
     </Link>
+  );
+}
+
+// ─── Stat ticker: rota cifras reales con pausa para leer ───
+function StatTicker({ items, size = 'sm' }: { items: StatItem[]; size?: 'sm' | 'md' | 'lg' }) {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    if (items.length <= 1) return;
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    const t = setInterval(() => setIdx(i => (i + 1) % items.length), 4000);
+    return () => clearInterval(t);
+  }, [items.length]);
+
+  if (items.length === 0) return null;
+  const cur = items[idx];
+  return (
+    <div className={`report-card-ticker report-card-ticker--${size}`} aria-hidden="true">
+      <span key={idx} className="report-card-ticker-item">
+        <strong className="report-card-ticker-value">{cur.value}</strong>
+        <span className="report-card-ticker-label">{cur.label}</span>
+      </span>
+    </div>
   );
 }
 
@@ -168,12 +253,16 @@ function CountUp({ target, suffix = '' }: { target: number; suffix?: string }) {
   const animate = useCallback(() => {
     if (hasAnimated.current) return;
     hasAnimated.current = true;
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      setValue(target);
+      return;
+    }
     const duration = 2000;
     const startTime = performance.now();
     const step = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       setValue(Math.floor(eased * target));
       if (progress < 1) requestAnimationFrame(step);
@@ -193,9 +282,9 @@ function CountUp({ target, suffix = '' }: { target: number; suffix?: string }) {
   }, [animate]);
 
   const formatted = value >= 1000000
-    ? `${(value / 1000000).toFixed(value >= 10000000 ? 1 : 1).replace('.', ',')}M`
+    ? `${(value / 1000000).toFixed(1).replace('.', ',')}M`
     : value >= 1000
-    ? `${(value / 1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.')}` 
+    ? `${(value / 1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.')}`
     : `${value}`;
 
   return (
