@@ -12,15 +12,31 @@ interface StoreState {
   activeSection: string;
   setActiveSection: (section: string) => void;
 
-  // Sidebar
+  // Mobile sidebar (overlay)
   sidebarOpen: boolean;
   toggleSidebar: () => void;
   setSidebarOpen: (open: boolean) => void;
+
+  // Persistent sidebar (desktop, collapsed/expanded)
+  sidebarCollapsed: boolean;
+  toggleSidebarCollapsed: () => void;
 
   // Scroll progress
   scrollProgress: number;
   setScrollProgress: (progress: number) => void;
 }
+
+const readBool = (key: string, fallback: boolean): boolean => {
+  try {
+    const v = localStorage.getItem(key);
+    if (v === null) return fallback;
+    return v === 'true';
+  } catch { return fallback; }
+};
+
+const writeBool = (key: string, value: boolean) => {
+  try { localStorage.setItem(key, String(value)); } catch {}
+};
 
 export const useStore = create<StoreState>((set) => ({
   // Theme — read from localStorage or default to dark
@@ -42,10 +58,18 @@ export const useStore = create<StoreState>((set) => ({
   activeSection: '',
   setActiveSection: (section) => set({ activeSection: section }),
 
-  // Sidebar
+  // Mobile sidebar overlay
   sidebarOpen: false,
   toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
   setSidebarOpen: (open) => set({ sidebarOpen: open }),
+
+  // Persistent sidebar
+  sidebarCollapsed: readBool('caba-sidebar-collapsed', false),
+  toggleSidebarCollapsed: () => set((state) => {
+    const next = !state.sidebarCollapsed;
+    writeBool('caba-sidebar-collapsed', next);
+    return { sidebarCollapsed: next };
+  }),
 
   // Scroll
   scrollProgress: 0,
