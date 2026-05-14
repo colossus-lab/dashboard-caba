@@ -41,6 +41,7 @@
     "@types/topojson-client": "^3.1.5",
     "@vercel/analytics": "^2.0.1",
     "d3-geo": "^3.1.1",
+    "lucide-react": "^1.16.0",
     "papaparse": "^5.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
